@@ -1,0 +1,74 @@
+﻿@model Supplier
+
+<div class="card-body">
+    <h2 class="card-title">@(Model.SupplierId == 0 ? "新增" : "修改")供應商</h2>
+    <form class="py-3" method="post">
+        <input asp-for="SupplierId" hidden />
+        <input asp-for="SupplierTimeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
+        <div class="form-group">
+            <label asp-for="SupplierName"></label>
+            <input asp-for="SupplierName" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="SupplierName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierTaxIDNumber"></label>
+            <input asp-for="SupplierTaxIDNumber" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierTaxIDNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierPersonInCharge"></label>
+            <input asp-for="SupplierPersonInCharge" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierPersonInCharge" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierTel"></label>
+            <input asp-for="SupplierTel" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierTel" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierAddress"></label>
+            <input asp-for="SupplierAddress" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierWeb"></label>
+            <input asp-for="SupplierWeb" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierWeb" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierContact"></label>
+            <input asp-for="SupplierContact" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierContact" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierContactTel"></label>
+            <input asp-for="SupplierContactTel" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierContactTel" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierEmail"></label>
+            <input asp-for="SupplierEmail" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierEmail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierPaymentMethod"></label>
+            <input asp-for="SupplierPaymentMethod" type="text" class="form-control" placeholder="">
+            <span asp-validation-for="SupplierPaymentMethod" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierNote"></label>
+            <textarea asp-for="SupplierNote" type="text" class="form-control" placeholder=""></textarea>
+            <span asp-validation-for="SupplierNote" class="text-danger"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
+            <button asp-area="" asp-controller="Supplier" asp-action="Index" class="btn btn-light btn-fw m-3">取消</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
