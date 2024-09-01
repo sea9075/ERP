@@ -3397,6 +3397,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\Purchase\\supplier.js",
+      "PackagePath": "staticwebassets\\js\\Purchase\\supplier.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\shopinf.js",
       "PackagePath": "staticwebassets\\js\\shopinf.js"
     },
@@ -3407,10 +3411,6 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\stockinf.js",
       "PackagePath": "staticwebassets\\js\\stockinf.js"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\supplier.js",
-      "PackagePath": "staticwebassets\\js\\supplier.js"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\lib\\bootstrap\\LICENSE",

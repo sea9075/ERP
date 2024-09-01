@@ -14,6 +14,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ERP.DataAccess\ERP.DataAccess.csproj" />
+    <ProjectReference Include="..\ERP.Models\ERP.Models.csproj" />
+    <ProjectReference Include="..\ERP.Utility\ERP.Utility.csproj" />
   </ItemGroup>
 
 </Project>
