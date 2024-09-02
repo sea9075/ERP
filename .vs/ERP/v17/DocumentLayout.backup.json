@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\controllers\\suppliercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\controllers\\suppliercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\category\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\category\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\supplier\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\supplier\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\wwwroot\\js\\purchase\\supplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|solutionrelative:erp\\wwwroot\\js\\purchase\\supplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6A3B2B16-2747-4F6E-AE04-413B1D51D0CF}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,51 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "supplier.js",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\Purchase\\supplier.js",
-              "RelativeDocumentMoniker": "ERP\\wwwroot\\js\\Purchase\\supplier.js",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\Purchase\\supplier.js",
-              "RelativeToolTip": "ERP\\wwwroot\\js\\Purchase\\supplier.js",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwA4AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-01T03:36:03.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SupplierController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\SupplierController.cs",
-              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Controllers\\SupplierController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\SupplierController.cs*",
-              "RelativeToolTip": "ERP\\Areas\\Purchase\\Controllers\\SupplierController.cs*",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAowG0AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T03:33:01.536Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Category\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Category\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Category\\Upsert.cshtml*",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Category\\Upsert.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-02T14:06:33.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Supplier\\Index.cshtml",
-              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Supplier\\Index.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Supplier\\Index.cshtml",
-              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Supplier\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAqAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Category\\Index.cshtml*",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Category\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-01T03:29:53.753Z",
+              "WhenOpened": "2024-09-02T14:06:18.807Z",
               "EditorCaption": ""
             }
           ]

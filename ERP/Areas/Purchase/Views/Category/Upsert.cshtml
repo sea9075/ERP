@@ -1,0 +1,29 @@
+﻿@model Category
+
+<div class="card-body">
+    <h2 class="card-title">@(Model.CategoryId == 0 ? "新增" : "修改")分類</h2>
+    <form class="py-3" method="post">
+        <input asp-for="CategoryId" hidden />
+        <input asp-for="CategoryTimeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
+        <div class="form-group">
+            <label asp-for="CategoryName"></label>
+            <input asp-for="CategoryName" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="CategoryName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryDescription"></label>
+            <textarea asp-for="CategoryDescription" type="text" class="form-control" placeholder=""></textarea>
+            <span asp-validation-for="CategoryDescription" class="text-danger"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
+            <button asp-area="" asp-controller="Category" asp-action="Index" class="btn btn-light btn-fw m-3">取消</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

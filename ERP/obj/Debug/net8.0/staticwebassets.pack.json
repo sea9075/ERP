@@ -3397,6 +3397,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\Purchase\\category.js",
+      "PackagePath": "staticwebassets\\js\\Purchase\\category.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\Purchase\\supplier.js",
       "PackagePath": "staticwebassets\\js\\Purchase\\supplier.js"
     },

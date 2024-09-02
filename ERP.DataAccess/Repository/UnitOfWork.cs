@@ -7,11 +7,14 @@ namespace ERP.DataAccess.Repository
     public class UnitOfWork : IUnitOfWork
     {
         private ApplicationDbContext _db;
+        
         public ISupplierRepository Supplier {  get; private set; }
+        public ICategoryRepository Category { get; private set; }
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             Supplier = new SupplierRepository(_db);
+            Category = new CategoryRepository(_db);
         }
 
         public void Save()
