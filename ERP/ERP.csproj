@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>3a3ce6e0-ed4f-400e-bd1b-8a6d1e7d74a9</UserSecretsId>
+    <UserSecretsId>3a705aa1-f935-4ffe-a317-a9ae0b7dd3f4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,13 +14,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ERP.DataAccess\ERP.DataAccess.csproj" />
-    <ProjectReference Include="..\ERP.Models\ERP.Models.csproj" />
-    <ProjectReference Include="..\ERP.Utility\ERP.Utility.csproj" />
   </ItemGroup>
 
 </Project>

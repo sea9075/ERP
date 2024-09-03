@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -77,7 +76,7 @@
                     <span class="nav-link">Navigation</span>
                 </li>
                 <li class="nav-item menu-items">
-                    <a asp-area="Guest" asp-controller="Home" asp-action="Index" class="nav-link">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">
                         <span class="menu-icon">
                             <i class="mdi mdi-speedometer"></i>
                         </span>
@@ -94,8 +93,7 @@
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" asp-area="Purchase" asp-controller="Supplier" asp-action="Index">供應商</a></li>
-                            <li class="nav-item"> <a class="nav-link" asp-area="Purchase" asp-controller="Category" asp-action="Index">產品分類</a></li>
+                            <li class="nav-item"> <a class="nav-link" asp-area="" asp-controller="Supplier" asp-action="Index">供應商</a></li>
                         </ul>
                     </div>
                 </li>
@@ -186,7 +184,6 @@
             </nav>
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <partial name="_Notification" />
                     @RenderBody()
                 </div>
                 <footer class="footer">
