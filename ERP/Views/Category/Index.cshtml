@@ -1,0 +1,30 @@
+﻿@model List<Category>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="card-title">商品類別基本資料</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="" asp-controller="Category" asp-action="Upsert" class="btn btn-inverse-primary btn-fw">新增商品基本資料</a>
+            </div>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table class="table table-bordered" id="tblData">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>商品類別名稱</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/category.js"></script>
+}

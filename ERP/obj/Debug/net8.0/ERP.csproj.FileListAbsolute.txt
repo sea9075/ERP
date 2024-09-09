@@ -1,3 +1,12 @@
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.AssemblyInfo.cs
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.RazorAssemblyInfo.cache
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.RazorAssemblyInfo.cs
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.sourcelink.json
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\appsettings.json
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\ERP.staticwebassets.runtime.json
@@ -110,14 +119,6 @@ C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Dr
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.AssemblyInfo.cs
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.RazorAssemblyInfo.cache
-C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.RazorAssemblyInfo.cs
 C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\staticwebassets\msbuild.ERP.Microsoft.AspNetCore.StaticWebAssets.props

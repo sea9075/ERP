@@ -3,19 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F1A9351-0008-433D-99F4-F511B776AAE1}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F1A9351-0008-433D-99F4-F511B776AAE1}|ERP\\ERP.csproj|solutionrelative:erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\controllers\\purchase\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\controllers\\purchase\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F1A9351-0008-433D-99F4-F511B776AAE1}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F1A9351-0008-433D-99F4-F511B776AAE1}|ERP\\ERP.csproj|solutionrelative:erp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F1A9351-0008-433D-99F4-F511B776AAE1}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5F1A9351-0008-433D-99F4-F511B776AAE1}|ERP\\ERP.csproj|solutionrelative:erp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\views\\category\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\views\\category\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\AppData\\Roaming\\Microsoft\\UserSecrets\\3a705aa1-f935-4ffe-a317-a9ae0b7dd3f4\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\models\\purchase\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\models\\purchase\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\wwwroot\\js\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\wwwroot\\js\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,58 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\appsettings.json",
-              "RelativeDocumentMoniker": "ERP\\appsettings.json",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\appsettings.json",
-              "RelativeToolTip": "ERP\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-03T15:42:23.734Z",
+              "DocumentIndex": 0,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Controllers\\Purchase\\CategoryController.cs",
+              "RelativeDocumentMoniker": "ERP\\Controllers\\Purchase\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Controllers\\Purchase\\CategoryController.cs*",
+              "RelativeToolTip": "ERP\\Controllers\\Purchase\\CategoryController.cs*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T14:42:37.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "category.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\category.js",
+              "RelativeDocumentMoniker": "ERP\\wwwroot\\js\\category.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\category.js",
+              "RelativeToolTip": "ERP\\wwwroot\\js\\category.js",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-09T14:39:56.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\user\\AppData\\Roaming\\Microsoft\\UserSecrets\\3a705aa1-f935-4ffe-a317-a9ae0b7dd3f4\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\3a705aa1-f935-4ffe-a317-a9ae0b7dd3f4\\secrets.json",
-              "ToolTip": "C:\\Users\\user\\AppData\\Roaming\\Microsoft\\UserSecrets\\3a705aa1-f935-4ffe-a317-a9ae0b7dd3f4\\secrets.json",
-              "RelativeToolTip": "..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\3a705aa1-f935-4ffe-a317-a9ae0b7dd3f4\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-03T15:42:16.231Z",
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Models\\Purchase\\Category.cs",
+              "RelativeDocumentMoniker": "ERP\\Models\\Purchase\\Category.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Models\\Purchase\\Category.cs",
+              "RelativeToolTip": "ERP\\Models\\Purchase\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T14:37:31.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Category\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Views\\Category\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Category\\Upsert.cshtml",
+              "RelativeToolTip": "ERP\\Views\\Category\\Upsert.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-09T14:36:23.886Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Program.cs",
-              "RelativeDocumentMoniker": "ERP\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Program.cs",
-              "RelativeToolTip": "ERP\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T15:40:50.432Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "ERP\\Views\\Category\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-09T14:35:49.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ERP\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "ERP\\Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAAALkAAAAcAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ERP\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAFwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-03T15:28:59.323Z",
+              "WhenOpened": "2024-09-09T14:35:01.652Z",
               "EditorCaption": ""
             }
           ]

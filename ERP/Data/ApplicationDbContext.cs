@@ -5,11 +5,8 @@ namespace ERP.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        }
-
-        DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
