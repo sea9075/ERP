@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\ERP\ERP.Models\bin\Debug\net8.0\ERP.Models.deps.json
+C:\Users\user\Desktop\ERP\ERP.Models\bin\Debug\net8.0\ERP.Models.dll
+C:\Users\user\Desktop\ERP\ERP.Models\bin\Debug\net8.0\ERP.Models.pdb
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.AssemblyInfo.cs
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.sourcelink.json
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.dll
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\refint\ERP.Models.dll
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ERP.Models.pdb
+C:\Users\user\Desktop\ERP\ERP.Models\obj\Debug\net8.0\ref\ERP.Models.dll

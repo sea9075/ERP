@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\ERP\ERP.Utility\bin\Debug\net8.0\ERP.Utility.deps.json
+C:\Users\user\Desktop\ERP\ERP.Utility\bin\Debug\net8.0\ERP.Utility.dll
+C:\Users\user\Desktop\ERP\ERP.Utility\bin\Debug\net8.0\ERP.Utility.pdb
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.AssemblyInfo.cs
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.sourcelink.json
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.dll
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\refint\ERP.Utility.dll
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.pdb
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ref\ERP.Utility.dll

@@ -6,7 +6,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            url: '/Category/GetAll'
+            url: '/Purchase/Category/GetAll'
         },
         "columns": [
             {
@@ -21,8 +21,8 @@ function loadDataTable() {
                 data: 'categoryId',
                 "render": function (data) {
                     return `<div class="w-75 btn-group" role="group">
-                    <a href="/Category/upsert?id=${data}" type="button" class="btn btn-inverse-info btn-fw">修改</a>
-                    <a onClick=Delete('/Category/Delete/${data}') type="button" class="btn btn-danger btn-fw">刪除</a>
+                    <a href="/Purchase/Category/upsert?id=${data}" type="button" class="btn btn-inverse-info btn-fw">修改</a>
+                    <a onClick=Delete('/Purchase/Category/Delete/${data}') type="button" class="btn btn-danger btn-fw">刪除</a>
                     </div>`
                 },
                 "width": "5%"
