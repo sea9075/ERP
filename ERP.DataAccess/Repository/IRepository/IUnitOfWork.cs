@@ -5,6 +5,7 @@ namespace ERP.DataAccess.Repository.IRepository
     public interface IUnitOfWork
     {
         ICategoryRepository Category {  get; }
+        ISupplierRepository Supplier { get; }
         void Save();
     }
 }

@@ -3405,6 +3405,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\supplier.js",
+      "PackagePath": "staticwebassets\\js\\supplier.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

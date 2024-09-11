@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZoJn6cJAazdjo3DAiWZkmVkZMFPP3fxDa3H9tQI0dcA=",
+  "Hash": "GdGwLvZWf6rVfTdmXJvosjJ7bH8yQuJqxh4FG1H08nc=",
   "Source": "ERP",
   "BasePath": "_content/ERP",
   "Mode": "Default",
@@ -16203,6 +16203,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\supplier.js",
+      "SourceId": "ERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\",
+      "BasePath": "_content/ERP",
+      "RelativePath": "js/supplier.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\supplier.js"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

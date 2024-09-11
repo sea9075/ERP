@@ -1,0 +1,34 @@
+﻿@model List<Supplier>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="card-title">廠商基本資料</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="Purchase" asp-controller="Supplier" asp-action="Upsert" class="btn btn-inverse-primary btn-fw">新增廠商基本資料</a>
+            </div>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table class="table table-bordered" id="tblData">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>廠商名稱</th>
+                        <th>廠商統一編號</th>
+                        <th>廠商電話</th>
+                        <th>廠商聯絡人</th>
+                        <th>聯絡人手機</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/supplier.js"></script>
+}
