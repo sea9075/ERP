@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GdGwLvZWf6rVfTdmXJvosjJ7bH8yQuJqxh4FG1H08nc=",
+  "Hash": "JjAwzApt6TkMvhTWR2nyasna5UCwgTStkRgnc6iyHFw=",
   "Source": "ERP",
   "BasePath": "_content/ERP",
   "Mode": "Default",
@@ -16203,6 +16203,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\stock.js",
+      "SourceId": "ERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\",
+      "BasePath": "_content/ERP",
+      "RelativePath": "js/stock.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\stock.js"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\supplier.js",

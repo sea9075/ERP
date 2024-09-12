@@ -43,6 +43,43 @@ namespace ERP.DataAccess.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ERP.Models.Purchase.Stock", b =>
+                {
+                    b.Property<int>("StockId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"));
+
+                    b.Property<string>("StockAddress")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("StockName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("StockPersonInChange")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("StockPersonInChangeCellPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StockTel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TimeSet")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("StockId");
+
+                    b.ToTable("Stocks");
+                });
+
             modelBuilder.Entity("ERP.Models.Purchase.Supplier", b =>
                 {
                     b.Property<int>("SupplierId")

@@ -9,5 +9,6 @@ namespace ERP.DataAccess
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
     }
 }

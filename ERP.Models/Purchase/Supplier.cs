@@ -39,8 +39,8 @@ namespace ERP.Models.Purchase
 
         [Required(ErrorMessage = "請輸入廠商聯絡人")]
         [DisplayName("廠商聯絡人")]
-        [MaxLength(20, ErrorMessage = "廠商名稱不能超過 20 字")]
-        [RegularExpression(@"^[\u4e00-\u9fa5a-zA-Z0-9]+$", ErrorMessage = "廠商聯絡人只能包含中文、英文和數字")]
+        [MaxLength(20, ErrorMessage = "廠商聯絡人名稱不能超過 20 字")]
+        [RegularExpression(@"^[\u4e00-\u9fa5a-zA-Z0-9]+$", ErrorMessage = "廠商聯絡人名稱只能包含中文、英文和數字")]
         public string SupplierContactPerson { get; set; }
 
         [DisplayName("聯絡人電話")]

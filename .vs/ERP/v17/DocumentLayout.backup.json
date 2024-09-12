@@ -1,12 +1,94 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\stock\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\stock\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D661836B-363E-4D44-8B66-5315F46D1E83}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D661836B-363E-4D44-8B66-5315F46D1E83}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\stock\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\stock\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\wwwroot\\js\\stock.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\wwwroot\\js\\stock.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Stock\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Stock\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Stock\\Upsert.cshtml*",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Stock\\Upsert.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T13:03:30.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Stock\\Index.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Stock\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Stock\\Index.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Stock\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T13:00:17.156Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Stock.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\Stock.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\Stock.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\Stock.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\Stock.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T13:03:18.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "stock.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\stock.js",
+              "RelativeDocumentMoniker": "ERP\\wwwroot\\js\\stock.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\stock.js",
+              "RelativeToolTip": "ERP\\wwwroot\\js\\stock.js",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-12T13:00:44.186Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
