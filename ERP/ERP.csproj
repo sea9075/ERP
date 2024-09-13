@@ -23,4 +23,8 @@
     <ProjectReference Include="..\ERP.Utility\ERP.Utility.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\product\" />
+  </ItemGroup>
+
 </Project>

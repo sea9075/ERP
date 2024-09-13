@@ -4,59 +4,84 @@
     <h2 class="card-title">@(Model.Product.ProductId == 0 ? "新增" : "修改")商品基本資料</h2>
     <form class="py-3" method="post" enctype="multipart/form-data">
         <input asp-for="Product.ProductId" hidden />
+        <input asp-for="Product.ProductBarCode" hidden />
+        <input asp-for="Product.ProductImage" hidden />
         <input asp-for="Product.TimeSet" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
-        <div class="form-group">
-            <label asp-for="Product.ProductName"></label>
-            <input asp-for="Product.ProductName" type="text" class="form-control" placeholder="" />
-            <span asp-validation-for="Product.ProductName" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.ProductDescription"></label>
-            <textarea asp-for="Product.ProductDescription" type="text" class="form-control" placeholder=""></textarea>
-            <span asp-validation-for="Product.ProductDescription" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.ProductCost"></label>
-            <input asp-for="Product.ProductCost" type="number" class="form-control" placeholder="" />
-            <span asp-validation-for="Product.ProductCost" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.ProductPrice"></label>
-            <input asp-for="Product.ProductPrice" type="number" class="form-control" placeholder="" />
-            <span asp-validation-for="Product.ProductPrice" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.ProductUnit"></label>
-            <input asp-for="Product.ProductUnit" type="text" class="form-control" placeholder="" />
-            <span asp-validation-for="Product.ProductUnit" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.ProductDiscount"></label>
-            <input asp-for="Product.ProductDiscount" type="number" class="form-control" placeholder="" />
-            <span asp-validation-for="Product.ProductDiscount" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.ProductImage"></label>
-            <input asp-for="Product.ProductImage" type="file" name="file" class="form-control" placeholder="" />
-            <span asp-validation-for="Product.ProductImage" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.CategoryId"></label>
-            <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-select" placeholder="" >
-                <option disabled selected>請選擇商品類別</option>
-            </select>
-            <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Product.SupplierId"></label>
-            <select asp-for="Product.SupplierId" asp-items="@Model.SupplierList" class="form-select" placeholder="" >
-                <option disabled selected>請選擇供應商</option>
-            </select>
-            <span asp-validation-for="Product.SupplierId" class="text-danger"></span>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
-            <a asp-area="Purchase" asp-controller="Product" asp-action="Index" class="btn btn-light btn-fw m-3">取消</a>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Product.ProductName"></label>
+                    <input asp-for="Product.ProductName" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+                </div>
+                @if (Model.Product.ProductId != 0)
+                {
+                    <div class="form-group">
+                        <label asp-for="Product.ProductBarCode"></label>
+                        <input asp-for="Product.ProductBarCode" type="text" class="form-control" disabled style="color:black" />
+                        <span asp-validation-for="Product.ProductBarCode" class="text-danger"></span>
+                    </div>
+                }
+                <div class="form-group">
+                    <label asp-for="Product.ProductDescription"></label>
+                    <textarea asp-for="Product.ProductDescription" type="text" class="form-control" placeholder=""></textarea>
+                    <span asp-validation-for="Product.ProductDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductCost"></label>
+                    <input asp-for="Product.ProductCost" type="number" class="form-control" placeholder="" />
+                    <span asp-validation-for="Product.ProductCost" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductPrice"></label>
+                    <input asp-for="Product.ProductPrice" type="number" class="form-control" placeholder="" />
+                    <span asp-validation-for="Product.ProductPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductUnit"></label>
+                    <input asp-for="Product.ProductUnit" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Product.ProductUnit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductDiscount"></label>
+                    <input asp-for="Product.ProductDiscount" type="number" class="form-control" placeholder="" />
+                    <span asp-validation-for="Product.ProductDiscount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.CategoryId"></label>
+                    <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-select" placeholder="" >
+                        <option disabled selected>請選擇商品類別</option>
+                    </select>
+                    <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.SupplierId"></label>
+                    <select asp-for="Product.SupplierId" asp-items="@Model.SupplierList" class="form-select" placeholder="" >
+                        <option disabled selected>請選擇供應商</option>
+                    </select>
+                    <span asp-validation-for="Product.SupplierId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center">
+                    <img class="mt-4 mb-4" src="@Model.Product.ProductImage" width="60%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductImage"></label>
+                    <input type="file" name="file" asp-for="Product.ProductImage" class="file-upload-default" />
+                    <div class="input-group col-xs-12 d-flex align-items-center">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image" />
+                        <span class="input-group-append ms-2">
+                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                        </span>
+                    </div>
+                    <span asp-validation-for="Product.ProductImage" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
+                <a asp-area="Purchase" asp-controller="Product" asp-action="Index" class="btn btn-light btn-fw m-3">取消</a>
+            </div>
         </div>
     </form>
 </div>

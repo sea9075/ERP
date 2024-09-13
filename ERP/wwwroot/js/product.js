@@ -17,7 +17,7 @@ function loadDataTable() {
                 "width": "5%"
             },
             { data: 'productName', "width": "10%", "type": "string" },
-            { data: 'categoryId', "width": "10%", "type": "string" },
+            { data: 'category.categoryName', "width": "10%", "type": "string" },
             { data: 'productBarCode', "width": "10%", "type": "string" },
             { data: 'productPrice', "width": "10%", "type": "string" },
             { data: 'productDiscount', "width": "10%", "type": "string" },

@@ -10,15 +10,17 @@ namespace ERP.Areas.Purchase.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductController(IUnitOfWork unitOfWork)
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
         {
-            List<Product> productList = _unitOfWork.Product.GetAll().ToList();
+            List<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
             return View(productList);
         }
 
@@ -51,10 +53,36 @@ namespace ERP.Areas.Purchase.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(ProductVM productVM)
+        public IActionResult Upsert(ProductVM productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
+                // 取得 wwwroot 路徑
+                string wwwRootPath = _webHostEnvironment.WebRootPath;
+
+                if (file != null)
+                {
+                    // 將檔案名稱變更為 GUID，並存入 wwwroot/images/product
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine(wwwRootPath, @"images\product");
+
+                    // 如果有新圖片上傳，刪除舊圖片
+                    if (!string.IsNullOrEmpty(productVM.Product.ProductImage))
+                    {
+                        var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.ProductImage.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    productVM.Product.ProductImage = @"\images\product\" + fileName;
+                }
+
                 if (productVM.Product.ProductId == 0)
                 {
                     // 取得今天日期
@@ -108,7 +136,7 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult GetAll()
         {
 
-            List<Product> productList = _unitOfWork.Product.GetAll().ToList();
+            List<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
             return Json(new { data = productList });
         }
 
@@ -116,6 +144,14 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult Delete(int? id)
         {
             var productDelete = _unitOfWork.Product.Get(u => u.ProductId == id);
+
+            // 刪除圖片檔案
+            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, productDelete.ProductImage.TrimStart('\\'));
+
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
 
             if (productDelete == null)
             {
