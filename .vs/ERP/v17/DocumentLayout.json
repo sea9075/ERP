@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwDcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T15:42:17.742Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
