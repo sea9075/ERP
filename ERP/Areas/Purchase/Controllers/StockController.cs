@@ -79,14 +79,14 @@ namespace ERP.Areas.Purchase.Controllers
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            var stockDelete = _unitOfWork.Stock.Get(u => u.StockId == id);
+            var stockDeleted = _unitOfWork.Stock.Get(u => u.StockId == id);
 
-            if (stockDelete == null)
+            if (stockDeleted == null)
             {
                 return Json(new { success = false, message = "刪除失敗" });
             }
 
-            _unitOfWork.Stock.Remove(stockDelete);
+            _unitOfWork.Stock.Remove(stockDeleted);
             _unitOfWork.Save();
             return Json(new { success = true, message = "刪除成功" });
         }

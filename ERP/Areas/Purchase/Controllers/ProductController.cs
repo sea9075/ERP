@@ -87,13 +87,14 @@ namespace ERP.Areas.Purchase.Controllers
                 {
                     // 取得今天日期
                     string todayDate = DateTime.Now.ToString("yyyyMMdd");
-                    string barCCodePrefix = $"P{todayDate}";
+                    string barCodePrefix = $"P{todayDate}";
 
                     // 查詢今天已經存在的商品數量，並取得當天最大的流水號
-                    var existingProductToday = _unitOfWork.Product.GetAll().Where(u => u.ProductBarCode.StartsWith(barCCodePrefix)).OrderByDescending(u => u.ProductBarCode).FirstOrDefault();
+                    var existingProductToday = _unitOfWork.Product.GetAll().Where(u => u.ProductBarCode.StartsWith(barCodePrefix)).OrderByDescending(u => u.ProductBarCode).FirstOrDefault();
 
                     // 假設今天的第一件商品
                     int nextSerialNumber = 1;
+
                     if (existingProductToday != null)
                     {
                         string lastBarCode = existingProductToday.ProductBarCode;
@@ -103,7 +104,7 @@ namespace ERP.Areas.Purchase.Controllers
                     }
 
                     // 產生新的商品條碼
-                    productVM.Product.ProductBarCode = $"{barCCodePrefix}{nextSerialNumber.ToString().PadLeft(5, '0')}";
+                    productVM.Product.ProductBarCode = $"{barCodePrefix}{nextSerialNumber.ToString().PadLeft(5, '0')}";
 
                     _unitOfWork.Product.Add(productVM.Product);
                     TempData["success"] = "新增商品成功";
@@ -143,22 +144,22 @@ namespace ERP.Areas.Purchase.Controllers
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            var productDelete = _unitOfWork.Product.Get(u => u.ProductId == id);
+            var productDeleted = _unitOfWork.Product.Get(u => u.ProductId == id);
 
             // 刪除圖片檔案
-            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, productDelete.ProductImage.TrimStart('\\'));
+            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, productDeleted.ProductImage.TrimStart('\\'));
 
             if (System.IO.File.Exists(oldImagePath))
             {
                 System.IO.File.Delete(oldImagePath);
             }
 
-            if (productDelete == null)
+            if (productDeleted == null)
             {
                 return Json(new { success = false, message = "刪除失敗" });
             }
 
-            _unitOfWork.Product.Remove(productDelete);
+            _unitOfWork.Product.Remove(productDeleted);
             _unitOfWork.Save();
             return Json(new { success = true, message = "刪除成功" });
         }

@@ -96,14 +96,14 @@ namespace ERP.Areas.Purchase.Controllers
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            var inventoryDelete = _unitOfWork.Inventory.Get(u => u.InventoryId == id);
+            var inventoryDeleted = _unitOfWork.Inventory.Get(u => u.InventoryId == id);
 
-            if (inventoryDelete == null)
+            if (inventoryDeleted == null)
             {
                 return Json(new {success = false, message = "刪除失敗" });
             }
 
-            _unitOfWork.Inventory.Remove(inventoryDelete);
+            _unitOfWork.Inventory.Remove(inventoryDeleted);
             _unitOfWork.Save();
             return Json(new { success = true, message = "刪除成功" });
         }

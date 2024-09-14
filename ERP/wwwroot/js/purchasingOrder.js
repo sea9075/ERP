@@ -6,7 +6,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            url: '/Purchase/Inventory/GetAll'
+            url: '/Purchase/PurchasingOrder/GetAll'
         },
         "columns": [
             {
@@ -16,16 +16,31 @@ function loadDataTable() {
                 },
                 "width": "5%"
             },
-            { data: 'product.productName', "width": "10%", "type": "string" },
-            { data: 'stock.stockName', "width": "10%", "type": "string" },
-            { data: 'storageBin', "width": "10%", "type": "string" },
-            { data: 'quantity', "width": "10%", "type": "string" },
             {
-                data: 'inventoryId',
+                data: 'purchasingOrderCode',
+                "width": "10%",
+                "type": "string",
+                "render": function (data, type, row) {
+                    return `<a href="/Purchase/PurchasingOrderDetail/${row.purchasingOrderDetailId}">${data}</a>`;
+                }
+            },
+            {
+                data: 'purchaseDate',
+                "width": "10%",
+                "type": "string",
+                "render": function (data) {
+                    var date = new Date(data);
+                    return date.toISOString().split('T')[0];
+                }
+            },
+            { data: 'purchaseTotalPrice', "width": "10%", "type": "string" },
+            { data: 'supplier.supplierName', "width": "10%", "type": "string" },
+            {
+                data: 'purchasingOrderId',
                 "render": function (data) {
                     return `<div class="w-75 btn-group" role="group">
-                    <a href="/Purchase/Inventory/upsert?id=${data}" type="button" class="btn btn-inverse-info btn-fw">修改</a>
-                    <a onClick=Delete('/Purchase/Inventory/Delete/${data}') type="button" class="btn btn-danger btn-fw">刪除</a>
+                    <a href="/Purchase/PurchasingOrder/upsert?id=${data}" type="button" class="btn btn-inverse-info btn-fw">修改</a>
+                    <a onClick=Delete('/Purchase/PurchasingOrder/Delete/${data}') type="button" class="btn btn-danger btn-fw">刪除</a>
                     </div>`
                 },
                 "width": "5%"
