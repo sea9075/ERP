@@ -24,10 +24,6 @@ namespace ERP.Models.Purchase
         [RegularExpression(@"^[\u4e00-\u9fa5a-zA-Z0-9\s]+$", ErrorMessage = "商品描述只能包含中文、英文、數字和空格，不能包含特殊符號")]
         public string? ProductDescription { get; set; }
 
-        [Required(ErrorMessage = "請輸入商品成本")]
-        [DisplayName("商品成本")]
-        public int ProductCost { get; set; }
-
         [Required(ErrorMessage = "請輸入商品價格")]
         [DisplayName("商品建議售價")]
         public int ProductPrice { get; set; }

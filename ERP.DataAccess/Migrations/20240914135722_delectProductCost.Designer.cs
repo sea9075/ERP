@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ERP.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240913153706_addProductToDb")]
-    partial class addProductToDb
+    [Migration("20240914135722_delectProductCost")]
+    partial class delectProductCost
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,39 @@ namespace ERP.DataAccess.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ERP.Models.Purchase.Inventory", b =>
+                {
+                    b.Property<int>("InventoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InventoryId"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StorageBin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TimeSet")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("InventoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("Inventory");
+                });
+
             modelBuilder.Entity("ERP.Models.Purchase.Product", b =>
                 {
                     b.Property<int>("ProductId")
@@ -60,9 +93,6 @@ namespace ERP.DataAccess.Migrations
                     b.Property<string>("ProductBarCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductCost")
-                        .HasColumnType("int");
 
                     b.Property<string>("ProductDescription")
                         .HasMaxLength(255)
@@ -99,6 +129,44 @@ namespace ERP.DataAccess.Migrations
                     b.HasIndex("SupplierId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("ERP.Models.Purchase.PurchasingOrder", b =>
+                {
+                    b.Property<int>("PurchasingOrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchasingOrderId"));
+
+                    b.Property<string>("PurchasingOrderCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PurchasingOrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PurchasingOrderNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchasingOrderTotalPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SupplierPurchaseId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TimeSet")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("PurchasingOrderId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("PurchasingOrders");
                 });
 
             modelBuilder.Entity("ERP.Models.Purchase.Stock", b =>
@@ -194,6 +262,25 @@ namespace ERP.DataAccess.Migrations
                     b.ToTable("Suppliers");
                 });
 
+            modelBuilder.Entity("ERP.Models.Purchase.Inventory", b =>
+                {
+                    b.HasOne("ERP.Models.Purchase.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ERP.Models.Purchase.Stock", "Stock")
+                        .WithMany()
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Stock");
+                });
+
             modelBuilder.Entity("ERP.Models.Purchase.Product", b =>
                 {
                     b.HasOne("ERP.Models.Purchase.Category", "Category")
@@ -209,6 +296,17 @@ namespace ERP.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ERP.Models.Purchase.PurchasingOrder", b =>
+                {
+                    b.HasOne("ERP.Models.Purchase.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Supplier");
                 });

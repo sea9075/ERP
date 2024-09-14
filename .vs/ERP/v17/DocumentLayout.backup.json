@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C131D9E-48C2-445A-9B6F-32203E50E3BB}|ERP.DataAccess\\ERP.DataAccess.csproj|c:\\users\\user\\desktop\\erp\\erp.dataaccess\\migrations\\20240914135722_delectproductcost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C131D9E-48C2-445A-9B6F-32203E50E3BB}|ERP.DataAccess\\ERP.DataAccess.csproj|solutionrelative:erp.dataaccess\\migrations\\20240914135722_delectproductcost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\product\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\product\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D661836B-363E-4D44-8B66-5315F46D1E83}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D661836B-363E-4D44-8B66-5315F46D1E83}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\wwwroot\\js\\purchasingorder.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\wwwroot\\js\\purchasingorder.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\purchasingorder\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\purchasingorder\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\purchasingorder\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{996B466D-2429-4AC5-87A5-F2CCD10E968E}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\purchasingorder\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D661836B-363E-4D44-8B66-5315F46D1E83}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\purchasingorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D661836B-363E-4D44-8B66-5315F46D1E83}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\purchasingorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +47,105 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20240914135722_delectProductCost.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\Migrations\\20240914135722_delectProductCost.cs",
+              "RelativeDocumentMoniker": "ERP.DataAccess\\Migrations\\20240914135722_delectProductCost.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\Migrations\\20240914135722_delectProductCost.cs",
+              "RelativeToolTip": "ERP.DataAccess\\Migrations\\20240914135722_delectProductCost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:57:22.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\Product.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\Product.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\Product.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\Product.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:55:25.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T13:55:01.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Product\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Product\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Product\\Upsert.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Product\\Upsert.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T13:54:55.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "purchasingOrder.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchasingOrder.js",
+              "RelativeDocumentMoniker": "ERP\\wwwroot\\js\\purchasingOrder.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchasingOrder.js",
+              "RelativeToolTip": "ERP\\wwwroot\\js\\purchasingOrder.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCAAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-14T13:51:45.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Upsert.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Upsert.cshtml",
               "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Upsert.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Upsert.cshtml",
               "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Upsert.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-14T08:29:10.297Z",
+              "WhenOpened": "2024-09-14T13:47:22.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Index.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Index.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\PurchasingOrder\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T13:47:12.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PurchasingOrder.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchasingOrder.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\PurchasingOrder.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchasingOrder.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\PurchasingOrder.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:45:14.717Z",
               "EditorCaption": ""
             }
           ]

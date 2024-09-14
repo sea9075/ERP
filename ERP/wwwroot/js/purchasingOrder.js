@@ -25,15 +25,15 @@ function loadDataTable() {
                 }
             },
             {
-                data: 'purchaseDate',
+                data: 'purchasingOrderDate',
                 "width": "10%",
                 "type": "string",
                 "render": function (data) {
                     var date = new Date(data);
-                    return date.toISOString().split('T')[0];
+                    return date.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' });
                 }
             },
-            { data: 'purchaseTotalPrice', "width": "10%", "type": "string" },
+            { data: 'purchasingOrderTotalPrice', "width": "10%", "type": "string" },
             { data: 'supplier.supplierName', "width": "10%", "type": "string" },
             {
                 data: 'purchasingOrderId',

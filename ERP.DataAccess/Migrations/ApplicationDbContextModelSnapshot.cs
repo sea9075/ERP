@@ -91,9 +91,6 @@ namespace ERP.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductCost")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductDescription")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -139,18 +136,18 @@ namespace ERP.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchasingOrderId"));
 
-                    b.Property<DateTime>("PurchaseDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PurchaseNote")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PurchaseTotalPrice")
-                        .HasColumnType("int");
-
                     b.Property<string>("PurchasingOrderCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PurchasingOrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PurchasingOrderNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchasingOrderTotalPrice")
+                        .HasColumnType("int");
 
                     b.Property<int>("SupplierId")
                         .HasColumnType("int");

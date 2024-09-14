@@ -19,14 +19,14 @@ namespace ERP.Models.Purchase
 
         [Required(ErrorMessage = "請輸入進貨日期")]
         [DisplayName("進貨日期")]
-        public DateTime PurchaseDate { get; set; }
+        public DateTime PurchasingOrderDate { get; set; }
 
         [DisplayName("進貨單備註")]
-        public string? PurchaseNote { get; set; }
+        public string? PurchasingOrderNote { get; set; }
 
         [Required(ErrorMessage = "請輸入進貨單總金額")]
         [DisplayName("進貨總金額")]
-        public int PurchaseTotalPrice { get; set; }
+        public int PurchasingOrderTotalPrice { get; set; }
 
         public DateTime TimeSet { get; set; }
 
