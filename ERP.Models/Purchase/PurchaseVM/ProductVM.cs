@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ERP.Models.Purchase.ProductVM
+namespace ERP.Models.Purchase.PurchaseVM
 {
     public class ProductVM
     {

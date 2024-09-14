@@ -8,6 +8,7 @@ namespace ERP.DataAccess.Repository.IRepository
         ISupplierRepository Supplier { get; }
         IStockRepository Stock { get; }
         IProductRepository Product { get; }
+        IInventoryRepository Inventory { get; }
         void Save();
     }
 }

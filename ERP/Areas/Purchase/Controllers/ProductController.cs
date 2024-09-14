@@ -1,6 +1,6 @@
 ﻿using ERP.DataAccess.Repository.IRepository;
 using ERP.Models.Purchase;
-using ERP.Models.Purchase.ProductVM;
+using ERP.Models.Purchase.PurchaseVM;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 

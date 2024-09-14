@@ -1,0 +1,47 @@
+﻿@model InventoryVM
+
+<div class="card-body">
+    <h2 class="card-title">@(Model.Inventory.InventoryId == 0 ? "新增" : "修改")商品庫存</h2>
+    <form class="py-3" method="post">
+        <input asp-for="Inventory.InventoryId" hidden />
+        <input asp-for="Inventory.Quantity" hidden />
+        <input asp-for="Inventory.TimeSet" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
+        <div class="form-group">
+            <label asp-for="Inventory.ProductId"></label>
+            <select asp-for="Inventory.ProductId" asp-items="@Model.ProductList" class="form-select" >
+                <option disabled selected>請選擇商品</option>
+            </select>
+            <span asp-validation-for="Inventory.ProductId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Inventory.StockId"></label>
+            <select asp-for="Inventory.StockId" asp-items="@Model.StockList" class="form-select">
+                <option disabled selected>請選擇倉庫</option>
+            </select>
+            <span asp-validation-for="Inventory.StockId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Inventory.StorageBin"></label>
+            <input asp-for="Inventory.StorageBin" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="Inventory.StorageBin" class="text-danger"></span>
+        </div>
+        @if(Model.Inventory.InventoryId != 0)
+        {
+            <div class="form-group">
+                <label asp-for="Inventory.Quantity"></label>
+                <input asp-for="Inventory.Quantity" type="number" class="form-control" disabled />
+                <span asp-validation-for="Inventory.Quantity" class="text-danger"></span>
+            </div>
+        }
+        <div>
+            <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
+            <a asp-area="Purchase" asp-controller="Stock" asp-action="Index" class="btn btn-light btn-fw m-3">取消</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
