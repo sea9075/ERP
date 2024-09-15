@@ -28,10 +28,6 @@ namespace ERP.Models.Purchase
         [DisplayName("商品建議售價")]
         public int ProductPrice { get; set; }
 
-        [Required(ErrorMessage = "請輸入商品單位")]
-        [DisplayName("商品單位")]
-        public string ProductUnit {  get; set; }
-
         [DisplayName("商品折扣")]
         public int? ProductDiscount { get; set; }
 

@@ -3397,18 +3397,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\product\\6fdced09-6fd2-4c25-b2bb-be0a735f43f1.png",
-      "PackagePath": "staticwebassets\\images\\product\\6fdced09-6fd2-4c25-b2bb-be0a735f43f1.png"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\product\\833e7676-4161-4b57-a4c9-7e1d52768dce.png",
-      "PackagePath": "staticwebassets\\images\\product\\833e7676-4161-4b57-a4c9-7e1d52768dce.png"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\product\\fe151ba4-6fb8-4d61-9b45-b3bf3af18cde.png",
-      "PackagePath": "staticwebassets\\images\\product\\fe151ba4-6fb8-4d61-9b45-b3bf3af18cde.png"
-    },
-    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\category.js",
       "PackagePath": "staticwebassets\\js\\category.js"
     },
