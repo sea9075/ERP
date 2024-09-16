@@ -1,6 +1,8 @@
 ﻿using ERP.DataAccess.Repository.IRepository;
 using ERP.DataAccess.Repository.IRepository.Purchase;
 using ERP.DataAccess.Repository.Purchase;
+using ERP.DataAccess.Repositroy.IRepository.Purchase;
+using ERP.DataAccess.Repositroy.Purchase;
 
 namespace ERP.DataAccess.Repository
 {
@@ -8,11 +10,13 @@ namespace ERP.DataAccess.Repository
     {
         private ApplicationDbContext _db;
         public ICategoryRepository Category {  get; private set; }
+        public IProductRepository Product { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             Category = new CategoryRepository(_db);
+            Product = new ProductRepository(_db);
         }
 
         public void Save()

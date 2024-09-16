@@ -256,3 +256,7 @@ C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\ERP.Utility.dll
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\ERP.DataAccess.pdb
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\ERP.Models.pdb
 C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\ERP.Utility.pdb
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\ERP\ERP\obj\Debug\net8.0\ERP.sourcelink.json
+C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\user\Desktop\ERP\ERP\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

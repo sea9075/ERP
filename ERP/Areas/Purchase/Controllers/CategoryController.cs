@@ -2,7 +2,7 @@
 using ERP.Models.Purchase;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ERP.Areas.Purchase.Controllers.Purchase
+namespace ERP.Areas.Purchase.Controllers
 {
     [Area("Purchase")]
     public class CategoryController : Controller

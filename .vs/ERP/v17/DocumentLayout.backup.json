@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|solutionrelative:erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90722F13-6F45-40DA-8F23-F78135F2F70D}|ERP.DataAccess\\ERP.DataAccess.csproj|c:\\users\\user\\desktop\\erp\\erp.dataaccess\\repositroy\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90722F13-6F45-40DA-8F23-F78135F2F70D}|ERP.DataAccess\\ERP.DataAccess.csproj|solutionrelative:erp.dataaccess\\repositroy\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ERP\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ERP\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-16T16:36:22.406Z",
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\Product.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\Product.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\Product.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\Product.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T18:13:59.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\Repositroy\\Repository.cs",
+              "RelativeDocumentMoniker": "ERP.DataAccess\\Repositroy\\Repository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\Repositroy\\Repository.cs",
+              "RelativeToolTip": "ERP.DataAccess\\Repositroy\\Repository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T18:11:55.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T18:10:13.803Z",
               "EditorCaption": ""
             }
           ]

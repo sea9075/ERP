@@ -16,7 +16,7 @@ function loadDataTable() {
                 },
                 "width": "5%"
             },
-            { data: 'categoryName', "width": "10%", "type": "string" },
+            { data: 'name', "width": "10%", "type": "string" },
             {
                 data: 'categoryId',
                 "render": function (data) {

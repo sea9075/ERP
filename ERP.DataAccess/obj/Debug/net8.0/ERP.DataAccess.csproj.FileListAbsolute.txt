@@ -17,3 +17,4 @@ C:\Users\user\Desktop\ERP\ERP.DataAccess\obj\Debug\net8.0\refint\ERP.DataAccess.
 C:\Users\user\Desktop\ERP\ERP.DataAccess\obj\Debug\net8.0\ERP.DataAccess.pdb
 C:\Users\user\Desktop\ERP\ERP.DataAccess\obj\Debug\net8.0\ERP.DataAccess.genruntimeconfig.cache
 C:\Users\user\Desktop\ERP\ERP.DataAccess\obj\Debug\net8.0\ref\ERP.DataAccess.dll
+C:\Users\user\Desktop\ERP\ERP.DataAccess\obj\Debug\net8.0\ERP.DataAccess.sourcelink.json
