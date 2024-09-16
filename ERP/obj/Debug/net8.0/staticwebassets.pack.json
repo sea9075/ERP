@@ -3409,6 +3409,10 @@
       "PackagePath": "staticwebassets\\js\\purchase\\product.js"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\stock.js",
+      "PackagePath": "staticwebassets\\js\\purchase\\stock.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
