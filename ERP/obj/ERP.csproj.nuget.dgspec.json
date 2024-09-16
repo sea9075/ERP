@@ -127,16 +127,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.2.5, )"
-            },
-            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -243,12 +233,6 @@
             "projectReferences": {
               "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\ERP.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\ERP.DataAccess.csproj"
-              },
-              "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\ERP.Models.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\ERP.Models.csproj"
-              },
-              "C:\\Users\\user\\Desktop\\ERP\\ERP.Utility\\ERP.Utility.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\ERP\\ERP.Utility\\ERP.Utility.csproj"
               }
             }
           }
@@ -284,7 +268,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             }
           },
           "imports": [

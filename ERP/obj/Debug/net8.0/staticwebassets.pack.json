@@ -3397,32 +3397,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\category.js",
-      "PackagePath": "staticwebassets\\js\\category.js"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\inventory.js",
-      "PackagePath": "staticwebassets\\js\\inventory.js"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\product.js",
-      "PackagePath": "staticwebassets\\js\\product.js"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchasingOrder.js",
-      "PackagePath": "staticwebassets\\js\\purchasingOrder.js"
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\category.js",
+      "PackagePath": "staticwebassets\\js\\purchase\\category.js"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\stock.js",
-      "PackagePath": "staticwebassets\\js\\stock.js"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\supplier.js",
-      "PackagePath": "staticwebassets\\js\\supplier.js"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\lib\\bootstrap\\LICENSE",
