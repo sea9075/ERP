@@ -3413,8 +3413,16 @@
       "PackagePath": "staticwebassets\\js\\purchase\\product.js"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\purchaseOrder.js",
+      "PackagePath": "staticwebassets\\js\\purchase\\purchaseOrder.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\stock.js",
       "PackagePath": "staticwebassets\\js\\purchase\\stock.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\supplier.js",
+      "PackagePath": "staticwebassets\\js\\purchase\\supplier.js"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\site.js",

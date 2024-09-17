@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "incEHgrZK3Z9Vzq1iIObf8sxnOdou1tUjh+MTkfT9aI=",
+  "Hash": "GwG44GGzwXsZxr9+dJcGscyKibUaGmDbxkElJMxKJH8=",
   "Source": "ERP",
   "BasePath": "_content/ERP",
   "Mode": "Default",
@@ -16243,6 +16243,25 @@
       "OriginalItemSpec": "wwwroot\\js\\purchase\\product.js"
     },
     {
+      "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\purchaseOrder.js",
+      "SourceId": "ERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\",
+      "BasePath": "_content/ERP",
+      "RelativePath": "js/purchase/purchaseOrder.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\purchase\\purchaseOrder.js"
+    },
+    {
       "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\stock.js",
       "SourceId": "ERP",
       "SourceType": "Discovered",
@@ -16260,6 +16279,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\purchase\\stock.js"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\supplier.js",
+      "SourceId": "ERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\",
+      "BasePath": "_content/ERP",
+      "RelativePath": "js/purchase/supplier.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\purchase\\supplier.js"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\site.js",
