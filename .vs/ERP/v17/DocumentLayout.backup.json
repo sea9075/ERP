@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\wwwroot\\js\\purchase\\inventory.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|solutionrelative:erp\\wwwroot\\js\\purchase\\inventory.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\wwwroot\\js\\purchase\\supplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|solutionrelative:erp\\wwwroot\\js\\purchase\\supplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "inventory.js",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\inventory.js",
-              "RelativeDocumentMoniker": "ERP\\wwwroot\\js\\purchase\\inventory.js",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\inventory.js",
-              "RelativeToolTip": "ERP\\wwwroot\\js\\purchase\\inventory.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "Title": "supplier.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\supplier.js",
+              "RelativeDocumentMoniker": "ERP\\wwwroot\\js\\purchase\\supplier.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\supplier.js*",
+              "RelativeToolTip": "ERP\\wwwroot\\js\\purchase\\supplier.js*",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-17T02:08:56.733Z",
+              "WhenOpened": "2024-09-17T02:55:59.143Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +41,9 @@
               "RelativeDocumentMoniker": "ERP\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "ERP\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGMAAACKAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAF4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T02:07:52.529Z",
+              "WhenOpened": "2024-09-17T02:54:00.98Z",
               "EditorCaption": ""
             }
           ]

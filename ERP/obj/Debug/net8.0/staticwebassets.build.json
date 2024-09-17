@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9WqHKdpP7Hh5+OegShJ3JdDFKJxG5loTcSz7z1ftI7M=",
+  "Hash": "incEHgrZK3Z9Vzq1iIObf8sxnOdou1tUjh+MTkfT9aI=",
   "Source": "ERP",
   "BasePath": "_content/ERP",
   "Mode": "Default",
@@ -16203,6 +16203,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\purchase\\category.js"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\inventory.js",
+      "SourceId": "ERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\",
+      "BasePath": "_content/ERP",
+      "RelativePath": "js/purchase/inventory.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\purchase\\inventory.js"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\js\\purchase\\product.js",

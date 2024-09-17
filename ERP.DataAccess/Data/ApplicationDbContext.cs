@@ -10,5 +10,6 @@ namespace ERP.DataAccess
         public DbSet<Product> Products { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
     }
 }
