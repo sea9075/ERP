@@ -12,5 +12,6 @@ namespace ERP.DataAccess
         public DbSet<Inventory> Inventory { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
+        public DbSet<PurchaseDetail> PurchaseDetail { get; set; }
     }
 }

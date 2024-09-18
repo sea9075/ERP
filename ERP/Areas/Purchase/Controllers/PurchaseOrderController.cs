@@ -32,6 +32,7 @@ namespace ERP.Areas.Purchase.Controllers
                     Value = u.SupplierId.ToString()
                 }),
                 PurchaseOrder = new PurchaseOrder()
+                
             };
 
             if (id == null || id == 0)
@@ -40,6 +41,7 @@ namespace ERP.Areas.Purchase.Controllers
             }
             else
             {
+                purchaseOrderVM.PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).ToList();
                 purchaseOrderVM.PurchaseOrder = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
                 return View(purchaseOrderVM);
             }
