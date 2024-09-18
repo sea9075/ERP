@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{90722F13-6F45-40DA-8F23-F78135F2F70D}|ERP.DataAccess\\ERP.DataAccess.csproj|c:\\users\\user\\desktop\\erp\\erp.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90722F13-6F45-40DA-8F23-F78135F2F70D}|ERP.DataAccess\\ERP.DataAccess.csproj|solutionrelative:erp.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\purchasevm\\purchaseordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\purchasevm\\purchaseordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\purchasedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\purchasedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\purchase\\purchasevm\\purchasedetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C85692-3FC7-4AAC-BB26-60C880594395}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\purchase\\purchasevm\\purchasedetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ERP.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ERP.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T12:05:41.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PurchaseDetailVM.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchaseVM\\PurchaseDetailVM.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\PurchaseVM\\PurchaseDetailVM.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchaseVM\\PurchaseDetailVM.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\PurchaseVM\\PurchaseDetailVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T11:38:32.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PurchaseOrderVM.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchaseVM\\PurchaseOrderVM.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\PurchaseVM\\PurchaseOrderVM.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchaseVM\\PurchaseOrderVM.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\PurchaseVM\\PurchaseOrderVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T11:38:02.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PurchaseDetail.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchaseDetail.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\Purchase\\PurchaseDetail.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\Purchase\\PurchaseDetail.cs",
+              "RelativeToolTip": "ERP.Models\\Purchase\\PurchaseDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T11:33:25.742Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
