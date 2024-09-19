@@ -11,12 +11,6 @@ namespace ERP.Models.Purchase.PurchaseVM
         public IEnumerable<SelectListItem> SupplierList { get; set; }
 
         [ValidateNever]
-        public List<PurchaseDetail> PurchaseDetailList { get; set; }
-
-        [ValidateNever]
         public PurchaseDetailVM PurchaseDetailVM { get; set; }
-
-        [ValidateNever]
-        public PurchaseDetail PurchaseDetail { get; set; }
     }
 }

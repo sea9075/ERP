@@ -7,58 +7,59 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace ERP.Areas.Purchase.Controllers
 {
     [Area("Purchase")]
-    public class PurchaseOrderController : Controller
+    public class PurchaseDetailController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public PurchaseOrderController(IUnitOfWork unitOfWork)
+        public PurchaseDetailController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            List<PurchaseOrder> PurchaseOrderList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
-            return View(PurchaseOrderList);
+            List<PurchaseDetail> PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Supplier").ToList();
+            return View(PurchaseDetailList);
         }
 
         public IActionResult Upsert(int? id)
         {
-            PurchaseOrderVM purchaseOrderVM = new()
+            PurchaseDetailVM purchaseDetailVM = new()
             {
-                PurchaseDetailVM = new PurchaseDetailVM(),
-                SupplierList = _unitOfWork.Supplier.GetAll().Select(u => new SelectListItem
+                ProductList = _unitOfWork.Product.GetAll().Select(u => new SelectListItem
                 {
                     Text = u.Name,
-                    Value = u.SupplierId.ToString()
+                    Value = u.ProductId.ToString()
                 }),
-                PurchaseOrder = new PurchaseOrder()
+                PurchaseDetail = new PurchaseDetail()
                 
             };
 
             if (id == null || id == 0)
             {
-                return View(purchaseOrderVM);
+                return View(purchaseDetailVM);
             }
             else
             {
-                purchaseOrderVM.PurchaseOrder = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
-                return View(purchaseOrderVM);
+                purchaseDetailVM.PurchaseDetail = _unitOfWork.PurchaseDetail.Get(u => u.PurchaseDetailId == id);
+                return View(purchaseDetailVM);
             }
         }
 
         [HttpPost]
-        public IActionResult Upsert(PurchaseOrderVM purchaseOrderVM)
+        public IActionResult Upsert(PurchaseDetailVM purchaseDetailVM)
         {
             if (ModelState.IsValid)
             {
-                if (purchaseOrderVM.PurchaseOrder.PurchaseOrderId == 0)
+                if (purchaseDetailVM.PurchaseDetail.PurchaseDetailId == 0)
                 {
-                    _unitOfWork.PurchaseOrder.Add(purchaseOrderVM.PurchaseOrder);
+                    _unitOfWork.PurchaseDetail.Add(purchaseDetailVM.PurchaseDetail);
+                    TempData["success"] = "新增進貨單成功";
                 }
                 else
                 {
-                    _unitOfWork.PurchaseOrder.Update(purchaseOrderVM.PurchaseOrder);
+                    _unitOfWork.PurchaseDetail.Update(purchaseDetailVM.PurchaseDetail);
+                    TempData["success"] = "修改進貨單成功";
                 }
 
                 _unitOfWork.Save();
@@ -66,7 +67,7 @@ namespace ERP.Areas.Purchase.Controllers
             }
             else
             {
-                if (purchaseOrderVM.PurchaseOrder.PurchaseOrderId == 0)
+                if (purchaseDetailVM.PurchaseDetail.PurchaseDetailId == 0)
                 {
                     TempData["error"] = "新增進貨單失敗";
                 }
@@ -74,7 +75,7 @@ namespace ERP.Areas.Purchase.Controllers
                 {
                     TempData["error"] = "修改進貨單失敗";
                 }
-                return View(purchaseOrderVM.PurchaseOrder);
+                return View(purchaseDetailVM.PurchaseDetail);
             }
         }
 
@@ -83,21 +84,21 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult GetAll()
         {
 
-            List<PurchaseOrder> inventoryList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
+            List<PurchaseDetail> inventoryList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Supplier").ToList();
             return Json(new { data = inventoryList });
         }
 
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            var purchasingOrderDeleted = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
+            var purchasingDetailDeleted = _unitOfWork.PurchaseDetail.Get(u => u.PurchaseDetailId == id);
 
-            if (purchasingOrderDeleted == null)
+            if (purchasingDetailDeleted == null)
             {
                 return Json(new { success = false, message = "刪除失敗" });
             }
 
-            _unitOfWork.PurchaseOrder.Remove(purchasingOrderDeleted);
+            _unitOfWork.PurchaseDetail.Remove(purchasingDetailDeleted);
             _unitOfWork.Save();
             return Json(new { success = true, message = "刪除成功" });
         }
