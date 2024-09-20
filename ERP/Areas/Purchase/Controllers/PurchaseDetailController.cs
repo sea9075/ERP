@@ -84,8 +84,8 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult GetAll()
         {
 
-            List<PurchaseDetail> inventoryList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Supplier").ToList();
-            return Json(new { data = inventoryList });
+            List<PurchaseDetail> purchaseDetailList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Supplier").ToList();
+            return Json(new { data = purchaseDetailList });
         }
 
         [HttpDelete]

@@ -26,7 +26,6 @@ namespace ERP.Areas.Purchase.Controllers
         {
             PurchaseOrderVM purchaseOrderVM = new()
             {
-                PurchaseDetailVM = new PurchaseDetailVM(),
                 SupplierList = _unitOfWork.Supplier.GetAll().Select(u => new SelectListItem
                 {
                     Text = u.Name,
@@ -54,11 +53,34 @@ namespace ERP.Areas.Purchase.Controllers
             {
                 if (purchaseOrderVM.PurchaseOrder.PurchaseOrderId == 0)
                 {
+                    // 取得今天日期
+                    string todayDate = DateTime.Now.ToString("yyyyMMdd");
+                    string barCodePrefix = $"PO{todayDate}";
+
+                    // 查詢今天已經存在的進貨單數量，並取得當天最大的流水號
+                    var existringPurchaseOrderToday = _unitOfWork.PurchaseOrder.GetAll().Where(u => u.OrderNumber.StartsWith(barCodePrefix)).OrderByDescending(u => u.OrderNumber).FirstOrDefault();
+
+                    // 假設今天的第一張進貨單
+                    int nextSerialNumber = 1;
+
+                    if (existringPurchaseOrderToday != null)
+                    {
+                        string lastBarCode = existringPurchaseOrderToday.OrderNumber;
+                        // 取得進貨單流水號部分
+                        int lastSerialNumber = int.Parse(lastBarCode.Substring(10));
+                        nextSerialNumber = lastSerialNumber + 1;
+                    }
+
+                    // 產生新的進貨單條碼
+                    purchaseOrderVM.PurchaseOrder.OrderNumber = $"{barCodePrefix}{nextSerialNumber.ToString().PadLeft(5, '0')}";
+
                     _unitOfWork.PurchaseOrder.Add(purchaseOrderVM.PurchaseOrder);
+                    TempData["success"] = "新增進貨單成功";
                 }
                 else
                 {
                     _unitOfWork.PurchaseOrder.Update(purchaseOrderVM.PurchaseOrder);
+                    TempData["success"] = "修改進貨單成功";
                 }
 
                 _unitOfWork.Save();
@@ -83,8 +105,8 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult GetAll()
         {
 
-            List<PurchaseOrder> inventoryList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
-            return Json(new { data = inventoryList });
+            List<PurchaseOrder> purchaseOrderList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
+            return Json(new { data = purchaseOrderList });
         }
 
         [HttpDelete]

@@ -9,7 +9,5 @@ namespace ERP.Models.Purchase.PurchaseVM
 
         [ValidateNever]
         public IEnumerable<SelectListItem> ProductList { get; set; }
-
-        public List<PurchaseDetail> PurchaseDetailList { get; set; }
     }
 }

@@ -9,8 +9,5 @@ namespace ERP.Models.Purchase.PurchaseVM
 
         [ValidateNever]
         public IEnumerable<SelectListItem> SupplierList { get; set; }
-
-        [ValidateNever]
-        public PurchaseDetailVM PurchaseDetailVM { get; set; }
     }
 }
