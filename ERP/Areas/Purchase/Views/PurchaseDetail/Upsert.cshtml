@@ -1,0 +1,40 @@
+﻿@model PurchaseDetailVM
+
+<div class="card-body">
+    <h2 class="card-title">@(Model.PurchaseDetail.PurchaseDetailId == 0 ? "新增" : "修改")進貨單</h2>
+    <form class="py-3 form-group" method="post">
+        <input asp-for="PurchaseDetail.PurchaseDetailId" hidden />
+        <input asp-for="PurchaseDetail.Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd")" hidden />
+        <input asp-for="PurchaseDetail.Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
+        <div class="form-group">
+            <label asp-for="PurchaseDetail.ProductId"></label>
+            <select asp-for="PurchaseDetail.ProductId" asp-items="@Model.ProductList" class="form-select">
+                <option disabled selected>請選擇商品</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="PurchaseDetail.Cost"></label>
+            <input asp-for="PurchaseDetail.Cost" type="number" class="form-control" placeholder="" />
+        </div>
+        <div class="form-group">
+            <label asp-for="PurchaseDetail.Quantity"></label>
+            <input asp-for="PurchaseDetail.Quantity" type="number" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+        </div>
+        @if (Model.PurchaseDetail.PurchaseDetailId != 0)
+        {
+            <div class="form-group">
+                <label asp-for="PurchaseDetail.TotalPrice"></label>
+                <input asp-for="PurchaseDetail.TotalPrice" type="text" class="form-control" />
+            </div>
+        }
+        <div>
+            <button type="submit" class="btn btn-primary btn-fw m-3">新增</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

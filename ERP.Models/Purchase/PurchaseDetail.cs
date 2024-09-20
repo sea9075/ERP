@@ -23,6 +23,8 @@ namespace ERP.Models.Purchase
         [DisplayName("商品名稱")]
         public int ProductId { get; set; }
 
+        public DateTime Timeset { get; set; }
+
         [ForeignKey("ProductId")]
         [ValidateNever]
         public Product Product { get; set; }

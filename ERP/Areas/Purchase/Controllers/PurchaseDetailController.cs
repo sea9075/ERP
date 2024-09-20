@@ -18,7 +18,7 @@ namespace ERP.Areas.Purchase.Controllers
 
         public IActionResult Index()
         {
-            List<PurchaseDetail> PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Supplier").ToList();
+            List<PurchaseDetail> PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Product").ToList();
             return View(PurchaseDetailList);
         }
 
@@ -84,7 +84,7 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult GetAll()
         {
 
-            List<PurchaseDetail> purchaseDetailList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Supplier").ToList();
+            List<PurchaseDetail> purchaseDetailList = _unitOfWork.PurchaseDetail.GetAll(includeProperties: "Product").ToList();
             return Json(new { data = purchaseDetailList });
         }
 

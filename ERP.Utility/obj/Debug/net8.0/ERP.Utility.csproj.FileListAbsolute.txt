@@ -9,3 +9,4 @@ C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.dll
 C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\refint\ERP.Utility.dll
 C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.pdb
 C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ref\ERP.Utility.dll
+C:\Users\user\Desktop\ERP\ERP.Utility\obj\Debug\net8.0\ERP.Utility.sourcelink.json

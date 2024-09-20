@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\purchasedetail\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDB56681-7E05-410E-8C68-DA0F505DD8C7}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\purchasedetail\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\PurchaseDetail\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\PurchaseDetail\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\PurchaseDetail\\Upsert.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\PurchaseDetail\\Upsert.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T13:41:36.627Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
