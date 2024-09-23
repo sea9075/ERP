@@ -135,9 +135,6 @@ namespace ERP.DataAccess.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Timeset")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
@@ -147,7 +144,7 @@ namespace ERP.DataAccess.Migrations
 
                     b.HasIndex("PurchaseOrderId");
 
-                    b.ToTable("PurchaseDetail");
+                    b.ToTable("purchaseDetails");
                 });
 
             modelBuilder.Entity("ERP.Models.Purchase.PurchaseOrder", b =>
@@ -165,7 +162,6 @@ namespace ERP.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OrderNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SupplierId")

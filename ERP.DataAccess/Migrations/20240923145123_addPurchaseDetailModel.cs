@@ -1,40 +1,46 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace ERP.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class fixPurchaseDetailModel : Migration
+    public partial class addPurchaseDetailModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterColumn<string>(
+                name: "OrderNumber",
+                table: "PurchaseOrders",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
+
             migrationBuilder.CreateTable(
-                name: "PurchaseDetail",
+                name: "purchaseDetails",
                 columns: table => new
                 {
                     PurchaseDetailId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Cost = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     TotalPrice = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Timeset = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PurchaseOrderId = table.Column<int>(type: "int", nullable: false)
+                    PurchaseOrderId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PurchaseDetail", x => x.PurchaseDetailId);
+                    table.PrimaryKey("PK_purchaseDetails", x => x.PurchaseDetailId);
                     table.ForeignKey(
-                        name: "FK_PurchaseDetail_Products_ProductId",
+                        name: "FK_purchaseDetails_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "ProductId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PurchaseDetail_PurchaseOrders_PurchaseOrderId",
+                        name: "FK_purchaseDetails_PurchaseOrders_PurchaseOrderId",
                         column: x => x.PurchaseOrderId,
                         principalTable: "PurchaseOrders",
                         principalColumn: "PurchaseOrderId",
@@ -42,13 +48,13 @@ namespace ERP.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PurchaseDetail_ProductId",
-                table: "PurchaseDetail",
+                name: "IX_purchaseDetails_ProductId",
+                table: "purchaseDetails",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PurchaseDetail_PurchaseOrderId",
-                table: "PurchaseDetail",
+                name: "IX_purchaseDetails_PurchaseOrderId",
+                table: "purchaseDetails",
                 column: "PurchaseOrderId");
         }
 
@@ -56,7 +62,17 @@ namespace ERP.DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PurchaseDetail");
+                name: "purchaseDetails");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "OrderNumber",
+                table: "PurchaseOrders",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
         }
     }
 }

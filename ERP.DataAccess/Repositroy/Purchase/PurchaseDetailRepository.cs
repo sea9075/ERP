@@ -14,7 +14,7 @@ namespace ERP.DataAccess.Repositroy.Purchase
 
         public void Update(PurchaseDetail purchaseDetail)
         {
-            _db.PurchaseDetail.Update(purchaseDetail);
+            _db.purchaseDetails.Update(purchaseDetail);
         }
     }
 }

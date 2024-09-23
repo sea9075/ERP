@@ -11,7 +11,7 @@ namespace ERP.Models.Purchase
         public int PurchaseOrderId { get; set; }
 
         [DisplayName("進貨單號")]
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
         [Required(ErrorMessage = "請輸入廠商進貨單號")]
         [DisplayName("廠商進貨單號")]

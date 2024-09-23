@@ -31,8 +31,9 @@ namespace ERP.Areas.Purchase.Controllers
                     Text = u.Name,
                     Value = u.SupplierId.ToString()
                 }),
-                PurchaseOrder = new PurchaseOrder()
-                
+                PurchaseOrder = new PurchaseOrder(),
+                PurchaseDetailVM = new PurchaseDetailVM(),
+                PurchaseDetailList = new List<PurchaseDetail>()
             };
 
             if (id == null || id == 0)
@@ -42,6 +43,7 @@ namespace ERP.Areas.Purchase.Controllers
             else
             {
                 purchaseOrderVM.PurchaseOrder = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
+                purchaseOrderVM.PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).ToList();
                 return View(purchaseOrderVM);
             }
         }
@@ -84,7 +86,9 @@ namespace ERP.Areas.Purchase.Controllers
                 }
 
                 _unitOfWork.Save();
+
                 return RedirectToAction("Index");
+                
             }
             else
             {
@@ -96,7 +100,7 @@ namespace ERP.Areas.Purchase.Controllers
                 {
                     TempData["error"] = "修改進貨單失敗";
                 }
-                return View(purchaseOrderVM.PurchaseOrder);
+                return RedirectToAction("Upsert");
             }
         }
 
@@ -105,8 +109,8 @@ namespace ERP.Areas.Purchase.Controllers
         public IActionResult GetAll()
         {
 
-            List<PurchaseOrder> purchaseOrderList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
-            return Json(new { data = purchaseOrderList });
+            List<PurchaseOrder> inventoryList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
+            return Json(new { data = inventoryList });
         }
 
         [HttpDelete]
