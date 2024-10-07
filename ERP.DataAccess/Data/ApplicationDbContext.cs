@@ -1,17 +1,12 @@
-﻿using ERP.Models.Purchase;
+﻿using ERP.Models.BasicInformation;
 using Microsoft.EntityFrameworkCore;
 
-namespace ERP.DataAccess
+namespace ERP.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Stock> Stocks { get; set; }
-        public DbSet<Inventory> Inventory { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
-        public DbSet<PurchaseDetail> purchaseDetails { get; set; }
+
+        public DbSet<MyCompany> MyCompany { get; set; }
     }
 }

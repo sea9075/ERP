@@ -1,4 +1,4 @@
-using ERP.DataAccess;
+using ERP.DataAccess.Data;
 using ERP.DataAccess.Repository;
 using ERP.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +29,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{area=Guest}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
