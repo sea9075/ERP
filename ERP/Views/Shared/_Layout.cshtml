@@ -20,11 +20,21 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="BasicInformation" asp-controller="MyCompany" asp-action="Upsert">公司基本資料</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="BasicInformation" asp-controller="Category" asp-action="Index">商品分類</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="basicInformation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                基本資料管理
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="basicInfoDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-area="BasicInformation" asp-controller="MyCompany" asp-action="Upsert">公司基本資料</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="BasicInformation" asp-controller="Stock" asp-action="Index">倉庫清單</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="BasicInformation" asp-controller="Category" asp-action="Index">商品分類</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>

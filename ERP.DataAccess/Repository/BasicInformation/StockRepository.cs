@@ -4,17 +4,17 @@ using ERP.Models.BasicInformation;
 
 namespace ERP.DataAccess.Repository.BasicInformation
 {
-    public class CategoryRepository : Repository<Category>, ICategoryRepository
+    public class StockRepository : Repository<Stock>, IStockRepository
     {
         private ApplicationDbContext _db;
-        public CategoryRepository(ApplicationDbContext db) : base(db)
+        public StockRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(Category category)
+        public void Update(Stock stock)
         {
-            _db.Categories.Update(category);
+            _db.Stocks.Update(stock);
         }
     }
 }

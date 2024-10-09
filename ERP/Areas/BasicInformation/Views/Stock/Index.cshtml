@@ -1,13 +1,13 @@
-﻿@model List<Category>
+﻿@model List<Stock>
 
 <div class="card">
     <div class="card-body">
         <div class="row">
             <div class="col-6">
-                <h2>商品分類</h2>
+                <h2>商庫清單</h2>
             </div>
             <div class="col-6 text-end">
-                <a asp-area="BasicInformation" asp-controller="Category" asp-action="Upsert" class="btn btn-primary">新增商品分類</a>
+                <a asp-area="BasicInformation" asp-controller="Stock" asp-action="Upsert" class="btn btn-primary">新增倉庫</a>
             </div>
         </div>
 
@@ -16,7 +16,9 @@
                 <thead>
                     <tr>
                         <th>NO.</th>
-                        <th>分類名稱</th>
+                        <th>倉庫名稱</th>
+                        <th>倉庫負責人</th>
+                        <th>倉庫電話</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -24,14 +26,16 @@
                     @{
                         int index = 1;
                     }
-                    @foreach (var obj in Model.OrderBy(u => u.CategoryId))
+                    @foreach (var obj in Model.OrderBy(u => u.StockId))
                     {
                         <tr>
                             <td>@index</td>
                             <td>@obj.Name</td>
+                            <td>@obj.PersonInCharge</td>
+                            <td>@obj.Phone</td>
                             <td>
-                                <a asp-area="BasicInformation" asp-controller="Category" asp-action="Upsert" asp-route-id="@obj.CategoryId" class="btn btn-primary">修改</a>
-                                <form asp-area="BasicInformation" asp-controller="Category" asp-action="Delete" asp-route-id="@obj.CategoryId" method="post" style="display:inline">
+                                <a asp-area="BasicInformation" asp-controller="Stock" asp-action="Upsert" asp-route-id="@obj.StockId" class="btn btn-primary">修改</a>
+                                <form asp-area="BasicInformation" asp-controller="Stock" asp-action="Delete" asp-route-id="@obj.StockId" method="post" style="display:inline">
                                     <button type="submit" class="btn btn-danger">刪除</button>
                                 </form>
                             </td>
