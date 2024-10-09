@@ -1,0 +1,45 @@
+﻿@model List<Category>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2>商品分類</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="BasicInformation" asp-controller="Category" asp-action="Upsert" class="btn btn-inverse-primary">新增商品分類</a>
+            </div>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>分類名稱</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int index = 1;
+                    }
+                    @foreach (var obj in Model.OrderBy(u => u.CategoryId))
+                    {
+                        <tr>
+                            <td>@index</td>
+                            <td>@obj.Name</td>
+                            <td>
+                                <a asp-area="BasicInformation" asp-controller="Category" asp-action="Upsert" asp-route-id="@obj.CategoryId" class="btn btn-primary">修改</a>
+                                <form asp-area="BasicInformation" asp-controller="Category" asp-action="Delete" asp-route-id="@obj.CategoryId" method="post" style="display:inline">
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </form>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

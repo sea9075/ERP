@@ -8,5 +8,6 @@ namespace ERP.DataAccess.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<MyCompany> MyCompany { get; set; }
+        public DbSet<Category> categories { get; set; }
     }
 }

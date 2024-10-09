@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\ERP\ERP
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/user/Desktop/ERP/ERP/Areas/BasicInformation/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xDYXRlZ29yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ERP/ERP/Areas/BasicInformation/Views/Category/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xDYXRlZ29yeVxVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/ERP/ERP/Areas/BasicInformation/Views/MyCompany/Upsert.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xNeUNvbXBhbnlcVXBzZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
