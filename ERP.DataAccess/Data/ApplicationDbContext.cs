@@ -1,4 +1,5 @@
 ﻿using ERP.Models.BasicInformation;
+using ERP.Models.Purchase;
 using Microsoft.EntityFrameworkCore;
 
 namespace ERP.DataAccess.Data
@@ -12,5 +13,6 @@ namespace ERP.DataAccess.Data
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
     }
 }

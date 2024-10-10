@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ERP.Models.BasicInformation
 {
@@ -34,6 +35,7 @@ namespace ERP.Models.BasicInformation
         public int CategoryId { get; set; }
 
         [ValidateNever]
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
     }
 }

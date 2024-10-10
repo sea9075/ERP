@@ -1,0 +1,38 @@
+﻿@model InventoryVM
+
+<div class="">
+    <h2 class="">@(Model.Inventory.InventoryId == 0 ? "新增" : "刪除")庫存</h2>
+    <form class="py-3" method="post" enctype="multipart/form-data">
+        <input asp-for="Inventory.InventoryId" hidden />
+        <input asp-for="Inventory.Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
+        <div class="form-group mb-4">
+            <label asp-for="Inventory.ProductId"></label>
+            <select asp-for="Inventory.ProductId" asp-items="@Model.ProductList" class="form-select">
+                <option disabled selected>請選擇商品</option>
+            </select>
+            <span asp-validation-for="Inventory.ProductId" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="Inventory.StockId"></label>
+            <select asp-for="Inventory.StockId" asp-items="@Model.StockList" class="form-select">
+                <option disabled selected>請選擇倉庫</option>
+            </select>
+            <span asp-validation-for="Inventory.StockId" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="Inventory.StorageLocation"></label>
+            <input asp-for="Inventory.StorageLocation" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="Inventory.StorageLocation" class="text-danger"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
+            <a asp-area="BasicInformation" asp-controller="Category" asp-action="Index" class="btn btn-secondary">取消</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

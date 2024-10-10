@@ -1,0 +1,51 @@
+﻿@model List<Inventory>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2>庫存清單</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="Purchase" asp-controller="Inventory" asp-action="Upsert" class="btn btn-primary">新增庫存</a>
+            </div>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>商品名稱</th>
+                        <th>倉庫名稱</th>
+                        <th>倉庫位置</th>
+                        <th>數量</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int index = 1;
+                    }
+                    @foreach (var obj in Model.OrderBy(u => u.InventoryId))
+                    {
+                        <tr>
+                            <td>@index</td>
+                            <td>@obj.Product.Name</td>
+                            <td>@obj.Stock.Name</td>
+                            <td>@obj.StorageLocation</td>
+                            <td>@obj.Quantity</td>
+                            <td>
+                                <a asp-area="Purchase" asp-controller="Inventory" asp-action="Upsert" asp-route-id="@obj.InventoryId" class="btn btn-primary">修改</a>
+                                <form asp-area="Purchase" asp-controller="Inventory" asp-action="Delete" asp-route-id="@obj.InventoryId" method="post" style="display:inline">
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </form>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

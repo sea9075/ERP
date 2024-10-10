@@ -140,7 +140,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["error"] = "修改失敗";
                 }
 
-                return View(productVM);
+                return RedirectToAction("Index");
             }
         }
 

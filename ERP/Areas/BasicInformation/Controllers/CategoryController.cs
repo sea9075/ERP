@@ -22,16 +22,16 @@ namespace ERP.Areas.BasicInformation.Controllers
 
         public IActionResult Upsert(int? id)
         {
-            Category myCompany = _unitOfWork.Category.Get(u => u.CategoryId == id);
+            Category category = _unitOfWork.Category.Get(u => u.CategoryId == id);
 
-            if (myCompany != null)
+            if (category != null)
             {
-                return View(myCompany);
+                return View(category);
             }
             else
             {
-                myCompany = new Category();
-                return View(myCompany);
+                category = new Category();
+                return View(category);
             }
         }
 
