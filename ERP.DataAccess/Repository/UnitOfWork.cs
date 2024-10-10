@@ -12,6 +12,7 @@ namespace ERP.DataAccess.Repository
         public ICategoryRepository Category { get; private set; }
         public IStockRepository Stock { get; private set; }
         public IProductRepository Product { get; private set; }
+        public ISupplierRepository Supplier { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -20,6 +21,7 @@ namespace ERP.DataAccess.Repository
             Category = new CategoryRepository(_db);
             Stock = new StockRepository(_db);
             Product = new ProductRepository(_db);
+            Supplier = new SupplierRepository(_db);
         }
 
         public void Save()

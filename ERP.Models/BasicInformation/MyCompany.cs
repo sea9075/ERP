@@ -24,7 +24,7 @@ namespace ERP.Models.BasicInformation
 
         [Required(ErrorMessage = "請輸入公司電話")]
         [DisplayName("*公司電話")]
-        [RegularExpression(@"^(0[2-9]\d{2}-?\d{6})$|^(09\d{2}-?\d{3}-?\d{3})$", ErrorMessage = "電話格式錯誤")]
+        [RegularExpression(@"^(0\d{1,2}-?\d{6,8}|09\d{2}-?\d{3}-?\d{3})$", ErrorMessage = "電話格式錯誤")]
         public string Phone {  get; set; }
 
         [Required(ErrorMessage = "請輸入公司地址")]

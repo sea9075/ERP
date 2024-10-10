@@ -1,0 +1,51 @@
+﻿@model List<Supplier>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2>廠商清單</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="BasicInformation" asp-controller="Supplier" asp-action="Upsert" class="btn btn-primary">新增廠商</a>
+            </div>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>廠商名稱</th>
+                        <th>廠商統一編號</th>
+                        <th>廠商聯絡人</th>
+                        <th>聯絡人電話</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int index = 1;
+                    }
+                    @foreach (var obj in Model.OrderBy(u => u.SupplierId))
+                    {
+                        <tr>
+                            <td>@index</td>
+                            <td>@obj.Name</td>
+                            <td>@obj.TaxNumber</td>
+                            <td>@obj.ContactPerson</td>
+                            <td>@obj.Phone</td>
+                            <td>
+                                <a asp-area="BasicInformation" asp-controller="Supplier" asp-action="Upsert" asp-route-id="@obj.SupplierId" class="btn btn-primary">修改</a>
+                                <form asp-area="BasicInformation" asp-controller="Supplier" asp-action="Delete" asp-route-id="@obj.SupplierId" method="post" style="display:inline">
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </form>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

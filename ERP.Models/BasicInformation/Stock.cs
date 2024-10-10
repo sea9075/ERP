@@ -20,11 +20,11 @@ namespace ERP.Models.BasicInformation
         public string PersonInCharge { get; set; }
 
         [DisplayName("倉庫電話")]
-        [RegularExpression(@"^(0[2-8]\d{1,2}-?\d{6,7})$", ErrorMessage = "電話格式錯誤")]
+        [RegularExpression(@"^0\d{1,2}-?\d{6,8}$", ErrorMessage = "電話格式錯誤")]
         public string? Phone {  get; set; }
 
         [DisplayName("負責人手機")]
-        [RegularExpression(@"^(09\d{2}-?\d{3}-?\d{3})$", ErrorMessage = "手機格式錯誤")]
+        [RegularExpression(@"^09\d{2}-?\d{3}-?\d{3}$", ErrorMessage = "手機格式錯誤")]
         public string? CellPhone { get; set; }
 
         [DisplayName("描述")]

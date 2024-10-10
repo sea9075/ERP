@@ -1,9 +1,9 @@
-﻿@model Stock
+﻿@model Supplier
 
 <div class="">
-    <h2 class="">@(Model.StockId == 0 ? "新增" : "刪除")倉庫</h2>
+    <h2 class="">@(Model.SupplierId == 0 ? "新增" : "刪除")廠商</h2>
     <form class="py-3" method="post">
-        <input asp-for="StockId" hidden />
+        <input asp-for="SupplierId" hidden />
         <input asp-for="Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
         <div class="form-group mb-4">
             <label asp-for="Name"></label>
@@ -11,14 +11,19 @@
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="form-group mb-4">
+            <label asp-for="TaxNumber"></label>
+            <input asp-for="TaxNumber" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="TaxNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
             <label asp-for="Address"></label>
             <input asp-for="Address" type="text" class="form-control" placeholder="" />
             <span asp-validation-for="Address" class="text-danger"></span>
         </div>
         <div class="form-group mb-4">
-            <label asp-for="PersonInCharge"></label>
-            <input asp-for="PersonInCharge" type="text" class="form-control" placeholder="" />
-            <span asp-validation-for="PersonInCharge" class="text-danger"></span>
+            <label asp-for="ContactPerson"></label>
+            <input asp-for="ContactPerson" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="ContactPerson" class="text-danger"></span>
         </div>
         <div class="form-group mb-4">
             <label asp-for="Phone"></label>
@@ -31,13 +36,18 @@
             <span asp-validation-for="CellPhone" class="text-danger"></span>
         </div>
         <div class="form-group mb-4">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="text" class="form-control" placeholder="" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
             <label asp-for="Description"></label>
             <textarea asp-for="Description" class="form-control" placeholder=""></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div>
             <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
-            <a asp-area="BasicInformation" asp-controller="Stock" asp-action="Index" class="btn btn-secondary">取消</a>
+            <a asp-area="BasicInformation" asp-controller="Supplier" asp-action="Index" class="btn btn-secondary">取消</a>
         </div>
     </form>
 </div>
