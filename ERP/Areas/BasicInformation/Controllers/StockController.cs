@@ -74,7 +74,8 @@ namespace ERP.Areas.BasicInformation.Controllers
         {
             if (id == 0 || id == null)
             {
-                return NotFound();
+                TempData["error"] = "刪除失敗";
+                return RedirectToAction("Index");
             }
 
             Stock stockDeleted = _unitOfWork.Stock.Get(u => u.StockId == id);

@@ -85,6 +85,44 @@ namespace ERP.DataAccess.Migrations
                     b.ToTable("MyCompany");
                 });
 
+            modelBuilder.Entity("ERP.Models.BasicInformation.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
+
+                    b.Property<string>("Barcode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Timeset")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("ERP.Models.BasicInformation.Stock", b =>
                 {
                     b.Property<int>("StockId")
@@ -119,6 +157,17 @@ namespace ERP.DataAccess.Migrations
                     b.HasKey("StockId");
 
                     b.ToTable("Stocks");
+                });
+
+            modelBuilder.Entity("ERP.Models.BasicInformation.Product", b =>
+                {
+                    b.HasOne("ERP.Models.BasicInformation.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,6 +7,7 @@ namespace ERP.DataAccess.Repository.IRepository
         IMyCompanyRepository MyCompany {  get; }
         ICategoryRepository Category { get; }
         IStockRepository Stock { get; }
+        IProductRepository Product { get; }
         void Save();
     }
 }

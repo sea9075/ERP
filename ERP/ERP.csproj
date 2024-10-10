@@ -33,6 +33,7 @@
     <Folder Include="Areas\BasicInformation\Models\" />
     <Folder Include="Areas\Guest\Data\" />
     <Folder Include="Areas\Guest\Models\" />
+    <Folder Include="wwwroot\images\product\" />
   </ItemGroup>
 
 </Project>

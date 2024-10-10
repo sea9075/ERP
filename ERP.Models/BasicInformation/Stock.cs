@@ -8,14 +8,14 @@ namespace ERP.Models.BasicInformation
         [Key]
         public int StockId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "請輸入倉庫名稱")]
         [DisplayName("*倉庫名稱")]
         public string Name { get; set; }
 
         [DisplayName("倉庫地址")]
         public string? Address { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "請輸入倉庫負責人")]
         [DisplayName("*倉庫負責人")]
         public string PersonInCharge { get; set; }
 
@@ -30,7 +30,6 @@ namespace ERP.Models.BasicInformation
         [DisplayName("描述")]
         public string? Description { get; set; }
 
-        [Required]
         public DateTime Timeset { get; set; }
     }
 }

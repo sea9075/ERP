@@ -36,18 +36,18 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(Category myCompany)
+        public IActionResult Upsert(Category category)
         {
             if (ModelState.IsValid)
             {
-                if (myCompany.CategoryId == 0)
+                if (category.CategoryId == 0)
                 {
-                    _unitOfWork.Category.Add(myCompany);
+                    _unitOfWork.Category.Add(category);
                     TempData["success"] = "新增成功";
                 }
                 else
                 {
-                    _unitOfWork.Category.Update(myCompany);
+                    _unitOfWork.Category.Update(category);
                     TempData["success"] = "修改成功";
                 }
 
@@ -56,7 +56,7 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
             else
             {
-                if (myCompany.CategoryId == 0)
+                if (category.CategoryId == 0)
                 {
                     TempData["error"] = "新增失敗";
                 }
@@ -65,7 +65,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["error"] = "修改失敗";
                 }
 
-                return View(myCompany);
+                return View(category);
             }
         }
 
@@ -74,7 +74,8 @@ namespace ERP.Areas.BasicInformation.Controllers
         {
             if (id == 0 || id == null)
             {
-                return NotFound();
+                TempData["error"] = "刪除失敗";
+                return RedirectToAction("Index");
             }
 
             Category categoryDeleted = _unitOfWork.Category.Get(u => u.CategoryId == id);
