@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\inventory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\inventory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\views\\inventory\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\views\\inventory\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Inventory\\Index.cshtml",
-              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Inventory\\Index.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Inventory\\Index.cshtml",
-              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Inventory\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-10T14:32:58.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Upsert.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Inventory\\Upsert.cshtml",
-              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Views\\Inventory\\Upsert.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Views\\Inventory\\Upsert.cshtml",
-              "RelativeToolTip": "ERP\\Areas\\Purchase\\Views\\Inventory\\Upsert.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-10T14:32:53.334Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
