@@ -1,7 +1,7 @@
 ﻿@model InventoryVM
 
 <div class="">
-    <h2 class="">@(Model.Inventory.InventoryId == 0 ? "新增" : "刪除")庫存</h2>
+    <h2 class="">@(Model.Inventory.InventoryId == 0 ? "新增" : "修改")庫存</h2>
     <form class="py-3" method="post" enctype="multipart/form-data">
         <input asp-for="Inventory.InventoryId" hidden />
         <input asp-for="Inventory.Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
@@ -26,7 +26,7 @@
         </div>
         <div>
             <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
-            <a asp-area="BasicInformation" asp-controller="Category" asp-action="Index" class="btn btn-secondary">取消</a>
+            <a asp-area="Purchase" asp-controller="Inventory" asp-action="Index" class="btn btn-secondary">取消</a>
         </div>
     </form>
 </div>

@@ -15,6 +15,8 @@ namespace ERP.DataAccess.Repository
         public ISupplierRepository Supplier { get; private set; }
         public IInventoryRepository Inventory { get; private set; }
         public IProductFlowRepository ProductFlow { get; private set; }
+        public IPurchaseOrderRepository PurchaseOrder { get; private set; }
+        public IPurchaseDetailRepository PurchaseDetail { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -26,6 +28,8 @@ namespace ERP.DataAccess.Repository
             Supplier = new SupplierRepository(_db);
             Inventory = new InventoryRepository(_db);
             ProductFlow = new ProductFlowRepository(_db);
+            PurchaseOrder = new PurchaseOrderRepository(_db);
+            PurchaseDetail = new PurchaseDetailRepository(_db);
         }
 
         public void Save()

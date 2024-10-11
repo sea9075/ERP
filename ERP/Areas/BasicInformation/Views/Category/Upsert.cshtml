@@ -1,7 +1,7 @@
 ﻿@model Category
 
 <div class="">
-    <h2 class="">@(Model.CategoryId == 0 ? "新增" : "刪除")商品分類</h2>
+    <h2 class="">@(Model.CategoryId == 0 ? "新增" : "修改")商品分類</h2>
     <form class="py-3" method="post">
         <input asp-for="CategoryId" hidden />
         <input asp-for="Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />

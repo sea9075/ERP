@@ -1,7 +1,7 @@
 ﻿@model ProductVM
 
 <div class="">
-    <h2 class="">@(Model.Product.ProductId == 0 ? "新增" : "刪除")產品</h2>
+    <h2 class="">@(Model.Product.ProductId == 0 ? "新增" : "修改")產品</h2>
     <form class="py-3" method="post" enctype="multipart/form-data">
         <input asp-for="Product.ProductId" hidden />
         <input asp-for="Product.Barcode" hidden />

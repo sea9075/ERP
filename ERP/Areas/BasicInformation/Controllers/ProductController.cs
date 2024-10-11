@@ -93,7 +93,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                 {
                     // 產生商品條碼
                     // 商品條碼格式為 P{今天日期}{流水號(00000)}
-                    // 取得今天日期
+                    // 取得當日日期
                     string todayDate = DateTime.Now.ToString("yyyyMMdd");
                     string barcodePrefix = $"P{todayDate}";
 

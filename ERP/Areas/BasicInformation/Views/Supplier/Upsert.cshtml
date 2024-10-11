@@ -1,7 +1,7 @@
 ﻿@model Supplier
 
 <div class="">
-    <h2 class="">@(Model.SupplierId == 0 ? "新增" : "刪除")廠商</h2>
+    <h2 class="">@(Model.SupplierId == 0 ? "新增" : "修改")廠商</h2>
     <form class="py-3" method="post">
         <input asp-for="SupplierId" hidden />
         <input asp-for="Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />

@@ -1,0 +1,51 @@
+﻿@model List<PurchaseOrder>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2>進貨單</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="Purchase" asp-controller="PurchaseOrder" asp-action="Upsert" class="btn btn-primary">新增進貨單</a>
+            </div>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>進貨單編號</th>
+                        <th>廠商名稱</th>
+                        <th>進貨日期</th>
+                        <th>總金額</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int index = 1;
+                    }
+                    @foreach (var obj in Model.OrderBy(u => u.PurchaseOrderId))
+                    {
+                        <tr>
+                            <td>@index</td>
+                            <td>@obj.PurchaseOrderNumber</td>
+                            <td>@obj.Supplier.Name</td>
+                            <td>@obj.OrderDate.ToString("yyyy-MM-dd")</td>
+                            <td>@obj.TotalPrice</td>
+                            <td>
+                                <a asp-area="Purchase" asp-controller="PurchaseOrder" asp-action="Upsert" asp-route-id="@obj.PurchaseOrderId" class="btn btn-primary">修改</a>
+                                <form asp-area="Purchase" asp-controller="PurchaseOrder" asp-action="Delete" asp-route-id="@obj.PurchaseOrderId" method="post" style="display:inline">
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </form>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
