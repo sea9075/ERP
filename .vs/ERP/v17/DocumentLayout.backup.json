@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\purchase\\controllers\\purchasedetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\purchase\\controllers\\purchasedetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\basicinformation\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\basicinformation\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PurchaseDetailController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\PurchaseDetailController.cs",
-              "RelativeDocumentMoniker": "ERP\\Areas\\Purchase\\Controllers\\PurchaseDetailController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\Purchase\\Controllers\\PurchaseDetailController.cs",
-              "RelativeToolTip": "ERP\\Areas\\Purchase\\Controllers\\PurchaseDetailController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T08:48:04.89Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\BasicInformation\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\BasicInformation\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\BasicInformation\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\BasicInformation\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-12T13:41:51.513Z",
               "EditorCaption": ""
             }
           ]

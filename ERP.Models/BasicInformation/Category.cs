@@ -9,7 +9,7 @@ namespace ERP.Models.BasicInformation
         public int CategoryId { get; set; }
 
         [Required(ErrorMessage = "請輸入分類名稱")]
-        [DisplayName("分類名稱")]
+        [DisplayName("*分類名稱")]
         public string Name { get; set; }
 
         public DateTime Timeset { get; set; }

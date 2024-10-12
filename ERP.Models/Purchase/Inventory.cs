@@ -15,9 +15,10 @@ namespace ERP.Models.Purchase
         public string? StorageLocation { get; set; }
 
         [ValidateNever]
-        [DisplayName("數量")]
+        [DisplayName("*數量")]
         public int Quantity { get; set; }
 
+        [Required(ErrorMessage = "請輸入倉庫名稱")]
         [ValidateNever]
         [DisplayName("倉庫名稱")]
         public int StockId { get; set; }
@@ -26,8 +27,9 @@ namespace ERP.Models.Purchase
         [ForeignKey("StockId")]
         public Stock Stock { get; set; }
 
+        [Required(ErrorMessage = "請輸入商品名稱")]
         [ValidateNever]
-        [DisplayName("商品名稱")]
+        [DisplayName("*商品名稱")]
         public int ProductId { get; set; }
 
         [ValidateNever]

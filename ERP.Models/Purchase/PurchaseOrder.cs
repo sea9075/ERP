@@ -15,22 +15,23 @@ namespace ERP.Models.Purchase
         [DisplayName("進貨單號")]
         public string PurchaseOrderNumber { get; set; }
 
-        [Required]
-        [DisplayName("廠商單號")]
+        [Required(ErrorMessage = "請輸入廠商進貨單號")]
+        [DisplayName("*廠商單號")]
         public string SupplierDeliverOrder {  get; set; }
 
-        [DisplayName("進貨日期")]
+        [Required(ErrorMessage = "請輸入進貨日期")]
+        [DisplayName("*進貨日期")]
         public DateTime OrderDate { get; set; }
 
-        [Required]
-        [DisplayName("進貨總價")]
+        [Required(ErrorMessage = "請輸入進貨總價")]
+        [DisplayName("*進貨總價")]
         public int TotalPrice { get; set; }
 
         public DateTime Timeset { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "請輸入進貨廠商")]
         [ValidateNever]
-        [DisplayName("進貨廠商")]
+        [DisplayName("*進貨廠商")]
         public int SupplierId { get; set; }
 
         [ForeignKey("SupplierId")]

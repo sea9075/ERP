@@ -11,14 +11,14 @@ namespace ERP.Models.BasicInformation
         public int ProductId { get; set; }
 
         [Required(ErrorMessage = "請輸入商品名稱")]
-        [DisplayName("商品名稱")]
+        [DisplayName("*商品名稱")]
         public string Name { get; set; }
 
         [ValidateNever]
         public string Barcode { get; set; }
 
         [Required(ErrorMessage = "請輸入商品售價")]
-        [DisplayName("商品價格")]
+        [DisplayName("*商品價格")]
         public int Price { get; set; }
 
         [DisplayName("商品圖片")]
@@ -30,7 +30,7 @@ namespace ERP.Models.BasicInformation
         public DateTime Timeset { get; set; }
 
         [Required(ErrorMessage = "請輸入商品分類")]
-        [DisplayName("商品分類")]
+        [DisplayName("*商品分類")]
         [ValidateNever]
         public int CategoryId { get; set; }
 

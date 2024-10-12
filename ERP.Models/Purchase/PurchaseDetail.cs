@@ -11,12 +11,12 @@ namespace ERP.Models.Purchase
         [Key]
         public int PurchaseDetailId { get; set; }
 
-        [Required]
-        [DisplayName("進貨成本")]
+        [Required(ErrorMessage = "請輸入進貨成本")]
+        [DisplayName("*進貨成本")]
         public int Cost { get; set; }
 
-        [Required]
-        [DisplayName("進貨數量")]
+        [Required(ErrorMessage = "請輸入進貨數量")]
+        [DisplayName("*進貨數量")]
         public int Quantity { get; set; }
 
         [DisplayName("小計")]
@@ -31,8 +31,9 @@ namespace ERP.Models.Purchase
         [ValidateNever]
         public PurchaseOrder PurchaseOrder { get; set; }
 
+        [Required(ErrorMessage = "請輸入商品名稱")]
         [ValidateNever]
-        [DisplayName("商品名稱")]
+        [DisplayName("*商品名稱")]
         public int ProductId {  get; set; }
 
         [ForeignKey("ProductId")]
