@@ -14,10 +14,10 @@ namespace ERP.Areas.Purchase.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index(int? id)
+        public IActionResult Index()
         {
-            List<ProductFlow> productFlowList = _unitOfWork.ProductFlow.GetAll(includeProperties: "Product").Where(u => u.ProductId == id).ToList();
-            return View();
+            List<ProductFlow> productFlowList = _unitOfWork.ProductFlow.GetAll(includeProperties: "Product").ToList();
+            return View(productFlowList);
         }
     }
 }

@@ -31,7 +31,17 @@ namespace ERP.Areas.BasicInformation.Controllers
                     Text = u.Name,
                     Value = u.SupplierId.ToString()
                 }),
-                PurchaseOrder = new PurchaseOrder()
+                PurchaseOrder = new PurchaseOrder(),
+                PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).ToList(),
+                PurchaseDetailVM = new()
+                {
+                    ProductList = _unitOfWork.Product.GetAll().Select(u => new SelectListItem
+                    {
+                        Text = u.Name,
+                        Value = u.ProductId.ToString()
+                    }),
+                    PurchaseDetail = new PurchaseDetail()
+                }
             };
 
             if (id == 0 || id == null)
@@ -40,6 +50,10 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
             else
             {
+                // 加總小計
+                int sumSubPrice = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).Sum(u => u.SubTotal);
+                ViewBag.SumSubPrice = sumSubPrice;
+
                 purchaseOrderVM.PurchaseOrder = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
                 return View(purchaseOrderVM);
             }
@@ -52,10 +66,11 @@ namespace ERP.Areas.BasicInformation.Controllers
             {
                 if (purchaseOrderVM.PurchaseOrder.PurchaseOrderId == 0)
                 {
+                    // --------------------
                     // 建立進貨單號
                     // 取得當日日期
                     string todayDate = DateTime.Now.ToString("yyyyMMdd");
-                    string purchasePrefix = $"PU{todayDate}";
+                    string purchasePrefix = $"X{todayDate}";
 
                     // 查詢今天已經存在的進貨單號，並取得當天最大的流水號
                     var exstingPurchaseOrderToday = _unitOfWork.PurchaseOrder.GetAll().Where(u => u.PurchaseOrderNumber.StartsWith(purchasePrefix)).OrderBy(u => u.PurchaseOrderNumber).FirstOrDefault();
@@ -76,18 +91,23 @@ namespace ERP.Areas.BasicInformation.Controllers
 
                     // 產生新的進貨單號
                     purchaseOrderVM.PurchaseOrder.PurchaseOrderNumber = $"{purchasePrefix}{nextSerialNumber.ToString().PadLeft(5, '0')}";
+                    // --------------------
 
                     _unitOfWork.PurchaseOrder.Add(purchaseOrderVM.PurchaseOrder);
                     TempData["success"] = "新增成功";
                 }
                 else
                 {
+                    // 加總小計
+                    int sumSubPrice = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == purchaseOrderVM.PurchaseOrder.PurchaseOrderId).Sum(u => u.SubTotal);
+                    ViewBag.SumSubPrice = sumSubPrice;
+
                     _unitOfWork.PurchaseOrder.Update(purchaseOrderVM.PurchaseOrder);
                     TempData["success"] = "修改成功";
                 }
 
                 _unitOfWork.Save();
-                return RedirectToAction("Index");
+                return RedirectToAction("Upsert", new {id = purchaseOrderVM.PurchaseOrder.PurchaseOrderId});
             }
             else
             {
@@ -111,6 +131,26 @@ namespace ERP.Areas.BasicInformation.Controllers
             {
                 TempData["error"] = "刪除失敗";
                 return RedirectToAction("Index");
+            }
+
+            // 刪除進貨單明細
+            List<PurchaseDetail> purchaseDetailDeletedList = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).ToList();
+
+            if (purchaseDetailDeletedList != null)
+            {
+                foreach (var obj in purchaseDetailDeletedList)
+                {
+                    // 減少庫存
+                    Inventory inventoryDeleted = _unitOfWork.Inventory.Get(u => u.ProductId == obj.ProductId);
+                    inventoryDeleted.Quantity -= obj.Quantity;
+
+                    // 刪除流向
+                    ProductFlow productFlowDeleted = _unitOfWork.ProductFlow.Get(u => u.Timeset == obj.Timeset && u.ProductId == obj.ProductId);
+                    _unitOfWork.ProductFlow.Remove(productFlowDeleted);
+                }
+
+                // 刪除訂單明細
+                _unitOfWork.PurchaseDetail.RemoveRange(purchaseDetailDeletedList);
             }
 
             PurchaseOrder purchaseOrderDeleted = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);

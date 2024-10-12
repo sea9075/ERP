@@ -1,45 +1,41 @@
 ﻿@model List<ProductFlow>
 
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-6">
-                <h2>商品流向</h2>
-            </div>
-        </div>
 
-        <div class="table-responsive py-3">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>NO.</th>
-                        <th>商品名稱</th>
-                        <th>從</th>
-                        <th>到</th>
-                        <th>動作</th>
-                        <th>數量</th>
-                        <th>時間</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @{
-                        int index = 1;
-                    }
-                    @foreach (var obj in Model.OrderBy(u => u.Timeset))
-                    {
-                        <tr>
-                            <td>@index</td>
-                            <td>@obj.Product.Name</td>
-                            <td>@obj.From</td>
-                            <td>@obj.To</td>
-                            <td>@obj.Action</td>
-                            <td>@obj.Quantity</td>
-                            <td>@obj.Timeset.ToString("yyyy-MM-dd HH:mm:ss")</td>
-                        </tr>
-                        index++;
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
+<div>
+    <h2>商品流向</h2>
+</div>
+
+
+<div class="table-responsive py-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>NO.</th>
+                <th>商品名稱</th>
+                <th>從</th>
+                <th>到</th>
+                <th>動作</th>
+                <th>數量</th>
+                <th>時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 1;
+            }
+            @foreach (var obj in Model.OrderBy(u => u.ProductFlowId))
+            {
+                <tr>
+                    <td>@index</td>
+                    <td>@obj.Product.Name</td>
+                    <td>@obj.From</td>
+                    <td>@obj.To</td>
+                    <td>@obj.Action</td>
+                    <td>@obj.Quantity</td>
+                    <td>@obj.Timeset.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
 </div>

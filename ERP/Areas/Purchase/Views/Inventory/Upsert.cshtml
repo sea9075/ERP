@@ -2,7 +2,7 @@
 
 <div class="">
     <h2 class="">@(Model.Inventory.InventoryId == 0 ? "新增" : "修改")庫存</h2>
-    <form class="py-3" method="post" enctype="multipart/form-data">
+    <form class="py-3" method="post">
         <input asp-for="Inventory.InventoryId" hidden />
         <input asp-for="Inventory.Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
         <div class="form-group mb-4">
