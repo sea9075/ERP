@@ -15,7 +15,7 @@ namespace ERP.DataAccess.Repository.BasicInformation
 
         public void Update(PurchaseDetail purchaseDetail)
         {
-            _db.PurchaseDetail.Update(purchaseDetail);
+            _db.PurchaseDetails.Update(purchaseDetail);
         }
     }
 }

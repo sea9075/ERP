@@ -14,6 +14,8 @@ namespace ERP.DataAccess.Repository.IRepository
         IPurchaseOrderRepository PurchaseOrder { get; }
         IPurchaseDetailRepository PurchaseDetail { get; }
         ICustomerRepository Customer { get; }
+        IDepartmentRepository Department { get; }
+        IEmployeeRepository Employee { get; }
         void Save();
     }
 }

@@ -18,6 +18,8 @@ namespace ERP.DataAccess.Repository
         public IPurchaseOrderRepository PurchaseOrder { get; private set; }
         public IPurchaseDetailRepository PurchaseDetail { get; private set; }
         public ICustomerRepository Customer { get; private set; }
+        public IDepartmentRepository Department { get; private set; }
+        public IEmployeeRepository Employee { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -32,6 +34,8 @@ namespace ERP.DataAccess.Repository
             PurchaseOrder = new PurchaseOrderRepository(_db);
             PurchaseDetail = new PurchaseDetailRepository(_db);
             Customer = new CustomerRepository(_db);
+            Department = new DepartmentRepository(_db);
+            Employee = new EmployeeRepository(_db);
         }
 
         public void Save()

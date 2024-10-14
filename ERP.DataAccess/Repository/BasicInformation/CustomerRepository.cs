@@ -14,7 +14,7 @@ namespace ERP.DataAccess.Repository.BasicInformation
 
         public void Update(Customer customer)
         {
-            _db.Customer.Update(customer);
+            _db.Customers.Update(customer);
         }
     }
 }
