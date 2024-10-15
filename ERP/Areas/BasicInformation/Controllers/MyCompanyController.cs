@@ -14,9 +14,9 @@ namespace ERP.Areas.BasicInformation.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Upsert()
+        public async Task<IActionResult> Upsert()
         {
-            MyCompany myCompany = _unitOfWork.MyCompany.Get(u => u.MyCompanyId == 1);
+            MyCompany myCompany = await _unitOfWork.MyCompany.GetAsync(u => u.MyCompanyId == 1);
 
             if (myCompany != null)
             {
@@ -30,7 +30,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(MyCompany myCompany)
+        public async Task<IActionResult> Upsert(MyCompany myCompany)
         {
             if (ModelState.IsValid)
             {
@@ -45,7 +45,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return View(myCompany);
             }
             else

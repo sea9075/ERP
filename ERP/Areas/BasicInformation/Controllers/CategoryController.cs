@@ -14,15 +14,15 @@ namespace ERP.Areas.BasicInformation.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Category> categoryList = _unitOfWork.Category.GetAll().ToList();
+            List<Category> categoryList = (await _unitOfWork.Category.GetAllAsync()).ToList();
             return View(categoryList);
         }
 
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
-            Category category = _unitOfWork.Category.Get(u => u.CategoryId == id);
+            Category category = await _unitOfWork.Category.GetAsync(u => u.CategoryId == id);
 
             if (category != null)
             {
@@ -36,7 +36,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(Category category)
+        public async Task<IActionResult> Upsert(Category category)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return RedirectToAction("Index");
             }
             else
@@ -70,7 +70,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == 0 || id == null)
             {
@@ -78,10 +78,10 @@ namespace ERP.Areas.BasicInformation.Controllers
                 return RedirectToAction("Index");
             }
 
-            Category categoryDeleted = _unitOfWork.Category.Get(u => u.CategoryId == id);
+            Category categoryDeleted = await _unitOfWork.Category.GetAsync(u => u.CategoryId == id);
             _unitOfWork.Category.Remove(categoryDeleted);
+            await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
-            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }

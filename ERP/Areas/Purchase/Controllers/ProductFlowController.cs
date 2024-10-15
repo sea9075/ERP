@@ -14,9 +14,9 @@ namespace ERP.Areas.Purchase.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<ProductFlow> productFlowList = _unitOfWork.ProductFlow.GetAll(includeProperties: "Product").ToList();
+            List<ProductFlow> productFlowList = (await _unitOfWork.ProductFlow.GetAllAsync(includeProperties: "Product")).ToList();
             return View(productFlowList);
         }
     }

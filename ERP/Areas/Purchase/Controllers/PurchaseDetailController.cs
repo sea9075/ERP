@@ -16,14 +16,12 @@ namespace ERP.Areas.Purchase.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(PurchaseDetailVM purchaseDetailVM)
+        public async Task<IActionResult> Create(PurchaseDetailVM purchaseDetailVM)
         {
             if (ModelState.IsValid)
             {
                 purchaseDetailVM.PurchaseDetail.SubTotal = purchaseDetailVM.PurchaseDetail.Cost * purchaseDetailVM.PurchaseDetail.Quantity;
                 _unitOfWork.PurchaseDetail.Add(purchaseDetailVM.PurchaseDetail);
-                _unitOfWork.Save();
-
 
                 // 加入商品流向
                 // --------------------
@@ -35,13 +33,12 @@ namespace ERP.Areas.Purchase.Controllers
                 productFlow.ProductId = purchaseDetailVM.PurchaseDetail.ProductId;
                 productFlow.Timeset = purchaseDetailVM.PurchaseDetail.Timeset;
                 _unitOfWork.ProductFlow.Add(productFlow);
-                _unitOfWork.Save();
                 // --------------------
 
 
                 // 加入庫存
                 // --------------------
-                Inventory inventory = _unitOfWork.Inventory.Get(u => u.ProductId == purchaseDetailVM.PurchaseDetail.ProductId);
+                Inventory inventory = await _unitOfWork.Inventory.GetAsync(u => u.ProductId == purchaseDetailVM.PurchaseDetail.ProductId);
 
                 if (inventory == null)
                 {
@@ -52,7 +49,7 @@ namespace ERP.Areas.Purchase.Controllers
                 {
                     inventory.Quantity += purchaseDetailVM.PurchaseDetail.Quantity;
                     _unitOfWork.Inventory.Update(inventory);
-                    _unitOfWork.Save();
+                    await _unitOfWork.SaveAsync();
                 }
                 // --------------------
                 TempData["success"] = "新增商品明細成功";
@@ -64,21 +61,21 @@ namespace ERP.Areas.Purchase.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || id == 0)
             {
                 return View();
             }
 
-            PurchaseDetail purchaseDetailDelete = _unitOfWork.PurchaseDetail.Get(u => u.PurchaseDetailId == id);
+            PurchaseDetail purchaseDetailDelete = await _unitOfWork.PurchaseDetail.GetAsync(u => u.PurchaseDetailId == id);
 
             // 減少庫存
-            Inventory inventory = _unitOfWork.Inventory.Get(u => u.ProductId == purchaseDetailDelete.ProductId);
+            Inventory inventory = await _unitOfWork.Inventory.GetAsync(u => u.ProductId == purchaseDetailDelete.ProductId);
             inventory.Quantity -= purchaseDetailDelete.Quantity;
 
             // 刪除流向
-            ProductFlow productFlowDeleted = _unitOfWork.ProductFlow.Get(u => u.Timeset == purchaseDetailDelete.Timeset && u.ProductId == purchaseDetailDelete.ProductId);
+            ProductFlow productFlowDeleted = await _unitOfWork.ProductFlow.GetAsync(u => u.Timeset == purchaseDetailDelete.Timeset && u.ProductId == purchaseDetailDelete.ProductId);
             
             if (productFlowDeleted != null)
             {
@@ -87,7 +84,7 @@ namespace ERP.Areas.Purchase.Controllers
             
             int purchaseOrderId = purchaseDetailDelete.PurchaseOrderId;
             _unitOfWork.PurchaseDetail.Remove(purchaseDetailDelete);
-            _unitOfWork.Save();
+            await _unitOfWork.SaveAsync();
 
             return RedirectToAction("Upsert", "PurchaseOrder", new { id = purchaseOrderId });
         }

@@ -14,15 +14,15 @@ namespace ERP.Areas.BasicInformation.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Department> departmentList = _unitOfWork.Department.GetAll().ToList();
+            List<Department> departmentList = (await _unitOfWork.Department.GetAllAsync()).ToList();
             return View(departmentList);
         }
 
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
-            Department department = _unitOfWork.Department.Get(u => u.DepartmentId == id);
+            Department department = await _unitOfWork.Department.GetAsync(u => u.DepartmentId == id);
 
             if (department != null)
             {
@@ -36,7 +36,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(Department department)
+        public async Task<IActionResult> Upsert(Department department)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return RedirectToAction("Index");
             }
             else
@@ -70,7 +70,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == 0 || id == null)
             {
@@ -78,10 +78,10 @@ namespace ERP.Areas.BasicInformation.Controllers
                 return RedirectToAction("Index");
             }
 
-            Department departmentDeleted = _unitOfWork.Department.Get(u => u.DepartmentId == id);
+            Department departmentDeleted = await _unitOfWork.Department.GetAsync(u => u.DepartmentId == id);
             _unitOfWork.Department.Remove(departmentDeleted);
+            await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
-            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }

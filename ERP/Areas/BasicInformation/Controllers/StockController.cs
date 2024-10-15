@@ -14,15 +14,15 @@ namespace ERP.Areas.BasicInformation.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Stock> stockList = _unitOfWork.Stock.GetAll().ToList();
+            List<Stock> stockList = (await _unitOfWork.Stock.GetAllAsync()).ToList();
             return View(stockList);
         }
 
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
-            Stock stock = _unitOfWork.Stock.Get(u => u.StockId == id);
+            Stock stock = await _unitOfWork.Stock.GetAsync(u => u.StockId == id);
 
             if (stock != null)
             {
@@ -36,7 +36,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(Stock stock)
+        public async Task<IActionResult> Upsert(Stock stock)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return RedirectToAction("Index");
             }
             else
@@ -70,7 +70,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == 0 || id == null)
             {
@@ -78,10 +78,10 @@ namespace ERP.Areas.BasicInformation.Controllers
                 return RedirectToAction("Index");
             }
 
-            Stock stockDeleted = _unitOfWork.Stock.Get(u => u.StockId == id);
+            Stock stockDeleted = await _unitOfWork.Stock.GetAsync(u => u.StockId == id);
             _unitOfWork.Stock.Remove(stockDeleted);
+            await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
-            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }

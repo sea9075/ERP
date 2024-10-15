@@ -18,17 +18,17 @@ namespace ERP.Areas.BasicInformation.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Product> productyList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
+            List<Product> productyList = (await _unitOfWork.Product.GetAllAsync(includeProperties: "Category")).ToList();
             return View(productyList);
         }
 
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
             ProductVM productVM = new()
             {
-                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                CategoryList = (await _unitOfWork.Category.GetAllAsync()).Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.CategoryId.ToString()
@@ -42,13 +42,13 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
             else
             {
-                productVM.Product = _unitOfWork.Product.Get(u => u.ProductId ==  id);
+                productVM.Product = await _unitOfWork.Product.GetAsync(u => u.ProductId ==  id);
                 return View(productVM);
             }
         }
 
         [HttpPost]
-        public IActionResult Upsert(ProductVM productVM, IFormFile? file)
+        public async Task<IActionResult> Upsert(ProductVM productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     string barcodePrefix = $"P{todayDate}";
 
                     // 查詢今天已經存在的商品數量，並取得當天最大的流水號
-                    var existingProductToday = _unitOfWork.Product.GetAll().Where(u => u.Barcode.StartsWith(barcodePrefix)).OrderBy(u => u.Barcode).FirstOrDefault();
+                    var existingProductToday = (await _unitOfWork.Product.GetAllAsync()).Where(u => u.Barcode.StartsWith(barcodePrefix)).OrderBy(u => u.Barcode).FirstOrDefault();
 
                     // 假設今天的第一件商品
                     int nextSerialNumber = 1;
@@ -126,7 +126,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return RedirectToAction("Index");
             }
             else
@@ -145,7 +145,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == 0 || id == null)
             {
@@ -153,7 +153,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                 return RedirectToAction("Index");
             }
 
-            Product productDeleted = _unitOfWork.Product.Get(u => u.ProductId == id);
+            Product productDeleted = await _unitOfWork.Product.GetAsync(u => u.ProductId == id);
 
             // 刪除圖片
             // 取得舊圖片位置
@@ -167,8 +167,8 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
 
             _unitOfWork.Product.Remove(productDeleted);
+            await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
-            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }

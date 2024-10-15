@@ -17,5 +17,6 @@ namespace ERP.DataAccess.Repository.IRepository
         IDepartmentRepository Department { get; }
         IEmployeeRepository Employee { get; }
         void Save();
+        Task SaveAsync();
     }
 }

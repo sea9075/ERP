@@ -16,26 +16,26 @@ namespace ERP.Areas.BasicInformation.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<PurchaseOrder> purchaseOrderList = _unitOfWork.PurchaseOrder.GetAll(includeProperties: "Supplier").ToList();
+            List<PurchaseOrder> purchaseOrderList = (await _unitOfWork.PurchaseOrder.GetAllAsync(includeProperties: "Supplier")).ToList();
             return View(purchaseOrderList);
         }
 
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
             PurchaseOrderVM purchaseOrderVM = new()
             {
-                SupplierList = _unitOfWork.Supplier.GetAll().Select(u => new SelectListItem
+                SupplierList = (await _unitOfWork.Supplier.GetAllAsync()).Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.SupplierId.ToString()
                 }),
                 PurchaseOrder = new PurchaseOrder(),
-                PurchaseDetailList = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).ToList(),
+                PurchaseDetailList = (await _unitOfWork.PurchaseDetail.GetAllAsync(includeProperties: "Product")).Where(u => u.PurchaseOrderId == id).ToList(),
                 PurchaseDetailVM = new()
                 {
-                    ProductList = _unitOfWork.Product.GetAll().Select(u => new SelectListItem
+                    ProductList = (await _unitOfWork.Product.GetAllAsync()).Select(u => new SelectListItem
                     {
                         Text = u.Name,
                         Value = u.ProductId.ToString()
@@ -51,16 +51,16 @@ namespace ERP.Areas.BasicInformation.Controllers
             else
             {
                 // 加總小計
-                int sumSubPrice = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).Sum(u => u.SubTotal);
+                int sumSubPrice = (await _unitOfWork.PurchaseDetail.GetAllAsync()).Where(u => u.PurchaseOrderId == id).Sum(u => u.SubTotal);
                 ViewBag.SumSubPrice = sumSubPrice;
 
-                purchaseOrderVM.PurchaseOrder = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
+                purchaseOrderVM.PurchaseOrder = await _unitOfWork.PurchaseOrder.GetAsync(u => u.PurchaseOrderId == id);
                 return View(purchaseOrderVM);
             }
         }
 
         [HttpPost]
-        public IActionResult Upsert(PurchaseOrderVM purchaseOrderVM)
+        public async Task<IActionResult> Upsert(PurchaseOrderVM purchaseOrderVM)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     string purchasePrefix = $"X{todayDate}";
 
                     // 查詢今天已經存在的進貨單號，並取得當天最大的流水號
-                    var exstingPurchaseOrderToday = _unitOfWork.PurchaseOrder.GetAll().Where(u => u.PurchaseOrderNumber.StartsWith(purchasePrefix)).OrderBy(u => u.PurchaseOrderNumber).FirstOrDefault();
+                    var exstingPurchaseOrderToday = (await _unitOfWork.PurchaseOrder.GetAllAsync()).Where(u => u.PurchaseOrderNumber.StartsWith(purchasePrefix)).OrderBy(u => u.PurchaseOrderNumber).FirstOrDefault();
 
                     // 假設今天的第一筆進貨單
                     int nextSerialNumber = 1;
@@ -99,14 +99,14 @@ namespace ERP.Areas.BasicInformation.Controllers
                 else
                 {
                     // 加總小計
-                    int sumSubPrice = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == purchaseOrderVM.PurchaseOrder.PurchaseOrderId).Sum(u => u.SubTotal);
+                    int sumSubPrice = (await _unitOfWork.PurchaseDetail.GetAllAsync()).Where(u => u.PurchaseOrderId == purchaseOrderVM.PurchaseOrder.PurchaseOrderId).Sum(u => u.SubTotal);
                     ViewBag.SumSubPrice = sumSubPrice;
 
                     _unitOfWork.PurchaseOrder.Update(purchaseOrderVM.PurchaseOrder);
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return RedirectToAction("Upsert", new {id = purchaseOrderVM.PurchaseOrder.PurchaseOrderId});
             }
             else
@@ -125,7 +125,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == 0 || id == null)
             {
@@ -134,18 +134,18 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
 
             // 刪除進貨單明細
-            List<PurchaseDetail> purchaseDetailDeletedList = _unitOfWork.PurchaseDetail.GetAll().Where(u => u.PurchaseOrderId == id).ToList();
+            List<PurchaseDetail> purchaseDetailDeletedList = (await _unitOfWork.PurchaseDetail.GetAllAsync()).Where(u => u.PurchaseOrderId == id).ToList();
 
             if (purchaseDetailDeletedList != null)
             {
                 foreach (var obj in purchaseDetailDeletedList)
                 {
                     // 減少庫存
-                    Inventory inventoryDeleted = _unitOfWork.Inventory.Get(u => u.ProductId == obj.ProductId);
+                    Inventory inventoryDeleted = await _unitOfWork.Inventory.GetAsync(u => u.ProductId == obj.ProductId);
                     inventoryDeleted.Quantity -= obj.Quantity;
 
                     // 刪除流向
-                    ProductFlow productFlowDeleted = _unitOfWork.ProductFlow.Get(u => u.Timeset == obj.Timeset && u.ProductId == obj.ProductId);
+                    ProductFlow productFlowDeleted = await _unitOfWork.ProductFlow.GetAsync(u => u.Timeset == obj.Timeset && u.ProductId == obj.ProductId);
                     _unitOfWork.ProductFlow.Remove(productFlowDeleted);
                 }
 
@@ -153,10 +153,10 @@ namespace ERP.Areas.BasicInformation.Controllers
                 _unitOfWork.PurchaseDetail.RemoveRange(purchaseDetailDeletedList);
             }
 
-            PurchaseOrder purchaseOrderDeleted = _unitOfWork.PurchaseOrder.Get(u => u.PurchaseOrderId == id);
+            PurchaseOrder purchaseOrderDeleted = await _unitOfWork.PurchaseOrder.GetAsync(u => u.PurchaseOrderId == id);
             _unitOfWork.PurchaseOrder.Remove(purchaseOrderDeleted);
+            await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
-            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }

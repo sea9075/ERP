@@ -16,22 +16,22 @@ namespace ERP.Areas.BasicInformation.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Inventory> inventoryList = _unitOfWork.Inventory.GetAll(includeProperties: "Product,Stock").ToList();
+            List<Inventory> inventoryList = (await _unitOfWork.Inventory.GetAllAsync(includeProperties: "Product,Stock")).ToList();
             return View(inventoryList);
         }
 
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
             InventoryVM inventoryVM = new()
             {
-                StockList = _unitOfWork.Stock.GetAll().Select(u => new SelectListItem
+                StockList = (await _unitOfWork.Stock.GetAllAsync()).Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.StockId.ToString()
                 }),
-                ProductList = _unitOfWork.Product.GetAll().Select(u => new SelectListItem
+                ProductList = (await _unitOfWork.Product.GetAllAsync()).Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.ProductId.ToString()
@@ -45,13 +45,13 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
             else
             {
-                inventoryVM.Inventory = _unitOfWork.Inventory.Get(u => u.InventoryId == id);
+                inventoryVM.Inventory = await _unitOfWork.Inventory.GetAsync(u => u.InventoryId == id);
                 return View(inventoryVM);
             }
         }
 
         [HttpPost]
-        public IActionResult Upsert(InventoryVM inventoryVM)
+        public async Task<IActionResult> Upsert(InventoryVM inventoryVM)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                     TempData["success"] = "修改成功";
                 }
 
-                _unitOfWork.Save();
+                await _unitOfWork.SaveAsync();
                 return RedirectToAction("Index");
             }
             else
@@ -86,7 +86,7 @@ namespace ERP.Areas.BasicInformation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == 0 || id == null)
             {
@@ -94,10 +94,10 @@ namespace ERP.Areas.BasicInformation.Controllers
                 return RedirectToAction("Index");
             }
 
-            Inventory inventoryDeleted = _unitOfWork.Inventory.Get(u => u.InventoryId == id);
+            Inventory inventoryDeleted = await _unitOfWork.Inventory.GetAsync(u => u.InventoryId == id);
             _unitOfWork.Inventory.Remove(inventoryDeleted);
+            await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
-            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }
