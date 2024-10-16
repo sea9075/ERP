@@ -50,6 +50,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xEZXBhcnRtZW50XFVwc2VydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/Desktop/ERP/ERP/Areas/BasicInformation/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xFbXBsb3llZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ERP/ERP/Areas/BasicInformation/Views/Employee/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xFbXBsb3llZVxVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/ERP/ERP/Areas/BasicInformation/Views/MyCompany/Upsert.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmFzaWNJbmZvcm1hdGlvblxWaWV3c1xNeUNvbXBhbnlcVXBzZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

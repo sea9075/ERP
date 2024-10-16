@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\employee\\08138e35-cc09-4fcf-bd0e-b461ddd34ba6.png",
+      "PackagePath": "staticwebassets\\images\\employee\\08138e35-cc09-4fcf-bd0e-b461ddd34ba6.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\product\\0c79459d-4572-415c-8232-ee6513eac19c.png",
       "PackagePath": "staticwebassets\\images\\product\\0c79459d-4572-415c-8232-ee6513eac19c.png"
     },

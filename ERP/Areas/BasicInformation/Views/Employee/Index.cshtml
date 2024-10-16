@@ -1,0 +1,51 @@
+﻿@model List<Employee>
+
+<div class="row">
+    <div class="col-6">
+        <h2>員工清單</h2>
+    </div>
+    <div class="col-6 text-end">
+        <a asp-area="BasicInformation" asp-controller="Employee" asp-action="Upsert" class="btn btn-primary">新增員工資本資料</a>
+    </div>
+</div>
+
+<div class="table-responsive py-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>NO.</th>
+                <th>員工姓名</th>
+                <th>員工部門</th>
+                <th>員工生日</th>
+                <th>員工手機</th>
+                <th>員工照片</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 1;
+            }
+            @foreach (var obj in Model.OrderBy(u => u.EmployeeId))
+            {
+                <tr>
+                    <td>@index</td>
+                    <td>@obj.Name</td>
+                    <td>@obj.Department.Name</td>
+                    <td>@obj.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>@obj.CellPhone</td>
+                    <td>
+                        <img style="width:100px" src="@obj.Image" />
+                    </td>
+                    <td>
+                        <a asp-area="BasicInformation" asp-controller="Employee" asp-action="Upsert" asp-route-id="@obj.EmployeeId" class="btn btn-primary">修改</a>
+                        <form asp-area="BasicInformation" asp-controller="Employee" asp-action="Delete" asp-route-id="@obj.EmployeeId" method="post" style="display:inline">
+                            <button type="submit" class="btn btn-danger">刪除</button>
+                        </form>
+                    </td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+</div>

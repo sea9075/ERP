@@ -19,7 +19,7 @@ namespace ERP.Models.BasicInformation
         public string NationalIdentificationNumber { get; set; }
 
         [DisplayName("性別")]
-        public int? Gneder {  get; set; }
+        public int? Gender {  get; set; }
 
         [Required(ErrorMessage = "請輸入員工生日")]
         [DisplayName("*出生年月日")]
@@ -55,11 +55,11 @@ namespace ERP.Models.BasicInformation
         public string EmergencyContactCellPhone { get; set; }
 
         [Required(ErrorMessage = "請輸入登入帳號")]
-        [DisplayName("登入帳號")]
+        [DisplayName("*登入帳號")]
         public string Account {  get; set; }
 
         [Required(ErrorMessage = "請輸入登入密碼")]
-        [DisplayName("登入密碼")]
+        [DisplayName("*登入密碼")]
         [StringLength(100, MinimumLength = 6, ErrorMessage = "密碼長度必須在 6 到 100 之間")]
         [RegularExpression(@"^(?=.*[A-Z])(?=.*\d).+$", ErrorMessage = "密碼必須至少包含一個大寫字母和一個數字")]
         public string Password { get; set; }
@@ -69,6 +69,9 @@ namespace ERP.Models.BasicInformation
         [Compare("Password" ,ErrorMessage = "密碼與確認密碼不一致")]
         [DisplayName("確認密碼")]
         public string ConfirmPassword { get; set; }
+
+        [DisplayName("員工照片")]
+        public string? Image { get; set; }
 
         public DateTime Timeset { get; set; }
 

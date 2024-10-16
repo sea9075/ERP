@@ -3,53 +3,72 @@ using ERP.Models.BasicInformation;
 using ERP.Models.BasicInformation.BasicInformationVM;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Identity;
 
 namespace ERP.Areas.BasicInformation.Controllers
 {
     [Area("BasicInformation")]
-    public class ProductController : Controller
+    public class EmployeeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IPasswordHasher<Employee> _passwordHasher;
 
-        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
+        public EmployeeController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment, IPasswordHasher<Employee> passwordHasher)
         {
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<IActionResult> Index()
         {
-            List<Product> productList = (await _unitOfWork.Product.GetAllAsync(includeProperties: "Category")).ToList();
-            return View(productList);
+            List<Employee> employeeList = (await _unitOfWork.Employee.GetAllAsync(includeProperties: "Department")).ToList();
+            return View(employeeList);
         }
 
         public async Task<IActionResult> Upsert(int? id)
         {
-            ProductVM productVM = new()
+            EmployeeVM employeeVM = new()
             {
-                CategoryList = (await _unitOfWork.Category.GetAllAsync()).Select(u => new SelectListItem
+                DepartmentList = (await _unitOfWork.Department.GetAllAsync()).Select(u => new SelectListItem
                 {
                     Text = u.Name,
-                    Value = u.CategoryId.ToString()
+                    Value = u.DepartmentId.ToString()
                 }),
-                Product = new Product()
+                Employee = new Employee()
             };
 
             if (id == null || id == 0)
             {
-                return View(productVM);
+                return View(employeeVM);
             }
             else
             {
-                productVM.Product = await _unitOfWork.Product.GetAsync(u => u.ProductId ==  id);
-                return View(productVM);
+                employeeVM.Employee = await _unitOfWork.Employee.GetAsync(u => u.EmployeeId ==  id);
+                return View(employeeVM);
             }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Upsert(ProductVM productVM, IFormFile? file)
+        public async Task<IActionResult> Upsert(EmployeeVM employeeVM, IFormFile? file)
         {
+            Employee existingEmployee = await _unitOfWork.Employee.GetAsync(u => u.EmployeeId == employeeVM.Employee.EmployeeId);
+
+            if (existingEmployee != null)
+            {
+                // 如果沒有輸入密碼，保持密碼不便
+                if (string.IsNullOrEmpty(employeeVM.Employee.Password))
+                {
+                    employeeVM.Employee.Password = existingEmployee.Password;
+                    employeeVM.Employee.ConfirmPassword = existingEmployee.ConfirmPassword;
+                }
+                else
+                {
+                    employeeVM.Employee.Password = _passwordHasher.HashPassword(employeeVM.Employee, employeeVM.Employee.Password);
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 // 新增圖片
@@ -63,13 +82,13 @@ namespace ERP.Areas.BasicInformation.Controllers
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
 
                     // 取得放置圖片位置
-                    string productImagePath = Path.Combine(wwwRootPath, @"images\product");
+                    string employeeImagePath = Path.Combine(wwwRootPath, @"images\employee");
 
                     // 判斷是否存在舊圖片
-                    if (!string.IsNullOrEmpty(productVM.Product.Image))
+                    if (!string.IsNullOrEmpty(employeeVM.Employee.Image))
                     {
                         // 取得舊圖片的檔案位置
-                        var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.Image.TrimStart('\\'));
+                        var oldImagePath = Path.Combine(wwwRootPath, employeeVM.Employee.Image.TrimStart('\\'));
 
                         // 如果舊圖片位置有存在檔案
                         if (System.IO.File.Exists(oldImagePath))
@@ -80,49 +99,26 @@ namespace ERP.Areas.BasicInformation.Controllers
                     }
 
                     // 將上傳的圖片存入指定位置
-                    using (var fileStream = new FileStream(Path.Combine(productImagePath, fileName), FileMode.Create))
+                    using (var fileStream = new FileStream(Path.Combine(employeeImagePath, fileName), FileMode.Create))
                     {
                         file.CopyTo(fileStream);
                     }
 
                     // 將檔案位置存入資料表
-                    productVM.Product.Image = @"\images\product\" + fileName;
+                    employeeVM.Employee.Image = @"\images\employee\" + fileName;
                 }
 
-                if (productVM.Product.ProductId == 0)
+                if (employeeVM.Employee.EmployeeId == 0)
                 {
-                    // 產生商品條碼
-                    // 商品條碼格式為 P{今天日期}{流水號(00000)}
-                    // 取得當日日期
-                    string todayDate = DateTime.Now.ToString("yyyyMMdd");
-                    string barcodePrefix = $"P{todayDate}";
-
-                    // 查詢今天已經存在的商品數量，並取得當天最大的流水號
-                    var existingProductToday = (await _unitOfWork.Product.GetAllAsync()).Where(u => u.Barcode.StartsWith(barcodePrefix)).OrderBy(u => u.Barcode).FirstOrDefault();
-
-                    // 假設今天的第一件商品
-                    int nextSerialNumber = 1;
-
-                    // 判斷今天有新增商品
-                    if (existingProductToday != null)
-                    {
-                        // 取得今天最後一筆新增商品
-                        string lastBarcode = existingProductToday.Barcode;
-
-                        // 取得流水號部分
-                        int lastSerialNumber = int.Parse(lastBarcode.Substring(9));
-                        nextSerialNumber = lastSerialNumber + 1;
-                    }
-
-                    // 產生新的商品條碼
-                    productVM.Product.Barcode = $"{barcodePrefix}{nextSerialNumber.ToString().PadLeft(5, '0')}";
-
-                    _unitOfWork.Product.Add(productVM.Product);
+                    employeeVM.Employee.Password = _passwordHasher.HashPassword(employeeVM.Employee, employeeVM.Employee.Password);
+                    _unitOfWork.Employee.Add(employeeVM.Employee);
                     TempData["success"] = "新增成功";
                 }
                 else
                 {
-                    _unitOfWork.Product.Update(productVM.Product);
+                    
+
+                    _unitOfWork.Employee.Update(employeeVM.Employee);
                     TempData["success"] = "修改成功";
                 }
 
@@ -131,7 +127,7 @@ namespace ERP.Areas.BasicInformation.Controllers
             }
             else
             {
-                if (productVM.Product.ProductId == 0)
+                if (employeeVM.Employee.EmployeeId == 0)
                 {
                     TempData["error"] = "新增失敗";
                 }
@@ -153,11 +149,11 @@ namespace ERP.Areas.BasicInformation.Controllers
                 return RedirectToAction("Index");
             }
 
-            Product productDeleted = await _unitOfWork.Product.GetAsync(u => u.ProductId == id);
+            Employee employeeDeleted = await _unitOfWork.Employee.GetAsync(u => u.EmployeeId == id);
 
             // 刪除圖片
             // 取得舊圖片位置
-            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, productDeleted.Image.TrimStart('\\'));
+            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, employeeDeleted.Image.TrimStart('\\'));
 
             // 如果舊圖片位置有存在檔案
             if (System.IO.File.Exists(oldImagePath))
@@ -166,7 +162,7 @@ namespace ERP.Areas.BasicInformation.Controllers
                 System.IO.File.Delete(oldImagePath);
             }
 
-            _unitOfWork.Product.Remove(productDeleted);
+            _unitOfWork.Employee.Remove(employeeDeleted);
             await _unitOfWork.SaveAsync();
             TempData["success"] = "刪除成功";
             return RedirectToAction("Index");

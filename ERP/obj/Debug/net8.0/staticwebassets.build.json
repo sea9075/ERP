@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "z598qLchzoTQXeqhp08Y9M/Y6BmDbT5LBOueZa9eJWk=",
+  "Hash": "tve/thwrP9FtLrjiK2Kp8acstcfRwmcXgFvM7S6kUmA=",
   "Source": "ERP",
   "BasePath": "_content/ERP",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\employee\\08138e35-cc09-4fcf-bd0e-b461ddd34ba6.png",
+      "SourceId": "ERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\",
+      "BasePath": "_content/ERP",
+      "RelativePath": "images/employee/08138e35-cc09-4fcf-bd0e-b461ddd34ba6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\employee\\08138e35-cc09-4fcf-bd0e-b461ddd34ba6.png"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\ERP\\ERP\\wwwroot\\images\\product\\0c79459d-4572-415c-8232-ee6513eac19c.png",

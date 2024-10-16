@@ -1,0 +1,119 @@
+﻿@model EmployeeVM
+
+<div class="">
+    <h2 class="">@(Model.Employee.EmployeeId == 0 ? "新增" : "修改")員工資本資料</h2>
+    <form class="py-3" method="post" enctype="multipart/form-data">
+        <input asp-for="Employee.EmployeeId" hidden />
+        <input asp-for="Employee.Image" hidden />
+        <input asp-for="Employee.Timeset" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" hidden />
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Name"></label>
+                    <input asp-for="Employee.Name" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.NationalIdentificationNumber"></label>
+                    <input asp-for="Employee.NationalIdentificationNumber" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.NationalIdentificationNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.DepartmentId"></label>
+                    <select asp-for="Employee.DepartmentId" asp-items="@Model.DepartmentList" class="form-select">
+                        <option disabled selected>請選擇部門</option>
+                    </select>
+                    <span asp-validation-for="Employee.DepartmentId" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Gender"></label>
+                    <select asp-for="Employee.Gender" asp-items="@Html.GetEnumSelectList<ERP.Utility.Enum.Gender>()" class="form-select">
+                        <option disabled selected>請選擇性別</option>
+                    </select>
+                    <span asp-validation-for="Employee.Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.BirthDate"></label>
+                    <input asp-for="Employee.BirthDate" type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                    <span asp-validation-for="Employee.BirthDate" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Phone"></label>
+                    <input asp-for="Employee.Phone" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.CellPhone"></label>
+                    <input asp-for="Employee.CellPhone" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.CellPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Email"></label>
+                    <input asp-for="Employee.Email" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Address"></label>
+                    <input asp-for="Employee.Address" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.Address" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.EmergencyContact"></label>
+                    <input asp-for="Employee.EmergencyContact" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.EmergencyContact" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.EmergencyContactPhone"></label>
+                    <input asp-for="Employee.EmergencyContactPhone" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.EmergencyContactPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.EmergencyContactCellPhone"></label>
+                    <input asp-for="Employee.EmergencyContactCellPhone" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.EmergencyContactCellPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Account"></label>
+                    <input asp-for="Employee.Account" type="text" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.Account" class="text-danger"></span>
+                </div>
+                @if (Model.Employee.EmployeeId == 0)
+                {
+                    <div class="form-group mb-4">
+                        <label asp-for="Employee.Password"></label>
+                        <input asp-for="Employee.Password" type="password" class="form-control" placeholder="" />
+                        <span asp-validation-for="Employee.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label asp-for="Employee.ConfirmPassword"></label>
+                        <input asp-for="Employee.ConfirmPassword" type="password" class="form-control" placeholder="" />
+                        <span asp-validation-for="Employee.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                }
+                
+            </div>
+            <div class="col-6">
+                    @if (!string.IsNullOrEmpty(Model.Employee.Image))
+                    {
+                        <div>
+                            <img src=@Url.Content(Model.Employee.Image) alt="@Model.Employee.Name" style="border-radius:5px; border:1px solid #bbb9b9; max-width:350px;" class="mt-4 mb-4" />
+                        </div>
+                    }
+                <div class="form-group">
+                    <label asp-for="Employee.Image"></label>
+                    <input asp-for="Employee.Image" type="file" name="file" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-fw m-3">確認</button>
+            <a asp-area="BasicInformation" asp-controller="Employee" asp-action="Index" class="btn btn-secondary">取消</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
