@@ -77,28 +77,25 @@
                     <input asp-for="Employee.Account" type="text" class="form-control" placeholder="" />
                     <span asp-validation-for="Employee.Account" class="text-danger"></span>
                 </div>
-                @if (Model.Employee.EmployeeId == 0)
-                {
-                    <div class="form-group mb-4">
-                        <label asp-for="Employee.Password"></label>
-                        <input asp-for="Employee.Password" type="password" class="form-control" placeholder="" />
-                        <span asp-validation-for="Employee.Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label asp-for="Employee.ConfirmPassword"></label>
-                        <input asp-for="Employee.ConfirmPassword" type="password" class="form-control" placeholder="" />
-                        <span asp-validation-for="Employee.ConfirmPassword" class="text-danger"></span>
-                    </div>
-                }
-                
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.Password"></label>
+                    <input asp-for="Employee.Password" id="password" type="password" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Employee.ConfirmPassword"></label>
+                    <input asp-for="Employee.ConfirmPassword" id="confirmpassword" type="password" class="form-control" placeholder="" />
+                    <span asp-validation-for="Employee.ConfirmPassword" class="text-danger"></span>
+                </div>
+
             </div>
             <div class="col-6">
-                    @if (!string.IsNullOrEmpty(Model.Employee.Image))
-                    {
-                        <div>
-                            <img src=@Url.Content(Model.Employee.Image) alt="@Model.Employee.Name" style="border-radius:5px; border:1px solid #bbb9b9; max-width:350px;" class="mt-4 mb-4" />
-                        </div>
-                    }
+                @if (!string.IsNullOrEmpty(Model.Employee.Image))
+                {
+                    <div>
+                        <img src=@Url.Content(Model.Employee.Image) alt="@Model.Employee.Name" style="border-radius:5px; border:1px solid #bbb9b9; max-width:350px;" class="mt-4 mb-4" />
+                    </div>
+                }
                 <div class="form-group">
                     <label asp-for="Employee.Image"></label>
                     <input asp-for="Employee.Image" type="file" name="file" />
@@ -114,6 +111,26 @@
 
 @section Scripts {
     @{
-        <partial name="_ValidationScriptsPartial" />
+            <partial name="_ValidationScriptsPartial" />
     }
 }
+
+<script>
+    const password = document.getElementById("password");
+    const confirmpassword = document.getElementById("confirmpassword");
+    
+    const isEdit = window.location.pathname.split('/').length >= 5;
+
+    if (!isEdit) {
+        password.setAttribute("required", "true");
+        confirmpassword.setAttribute("require", "true");
+
+        password.oninvalid = function() {
+            this.setCustomValidity("請輸入密碼")
+        }
+
+        confirmpassword.oninvalid = function() {
+            this.setCustomValidity("請輸入確認密碼")
+        }
+    }
+</script>

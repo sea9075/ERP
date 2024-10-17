@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ERP.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241014145657_addEmployeeToDb")]
-    partial class addEmployeeToDb
+    [Migration("20241017144111_updateEmployeePasswordToDb")]
+    partial class updateEmployeePasswordToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -147,8 +147,11 @@ namespace ERP.DataAccess.Migrations
                     b.Property<string>("EmergencyContactPhone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Gneder")
+                    b.Property<int?>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -159,7 +162,6 @@ namespace ERP.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ERP.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241016133252_fixEmployeeToDb")]
-    partial class fixEmployeeToDb
+    [Migration("20241017131635_addEmployeeToDb")]
+    partial class addEmployeeToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -153,7 +153,7 @@ namespace ERP.DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NationalIdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gneder = table.Column<int>(type: "int", nullable: true),
+                    Gender = table.Column<int>(type: "int", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CellPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -164,6 +164,7 @@ namespace ERP.DataAccess.Migrations
                     EmergencyContactCellPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Account = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Timeset = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: false)
                 },

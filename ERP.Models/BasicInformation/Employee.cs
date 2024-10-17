@@ -58,17 +58,16 @@ namespace ERP.Models.BasicInformation
         [DisplayName("*登入帳號")]
         public string Account {  get; set; }
 
-        [Required(ErrorMessage = "請輸入登入密碼")]
         [DisplayName("*登入密碼")]
         [StringLength(100, MinimumLength = 6, ErrorMessage = "密碼長度必須在 6 到 100 之間")]
         [RegularExpression(@"^(?=.*[A-Z])(?=.*\d).+$", ErrorMessage = "密碼必須至少包含一個大寫字母和一個數字")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         [NotMapped] // 不映射到資料庫
-        [Required(ErrorMessage = "請輸入確認密碼")]
         [Compare("Password" ,ErrorMessage = "密碼與確認密碼不一致")]
         [DisplayName("確認密碼")]
-        public string ConfirmPassword { get; set; }
+        [ValidateNever]
+        public string? ConfirmPassword { get; set; }
 
         [DisplayName("員工照片")]
         public string? Image { get; set; }

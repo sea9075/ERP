@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\basicinformation\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\basicinformation\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|c:\\users\\user\\desktop\\erp\\erp\\areas\\basicinformation\\views\\employee\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D5A8B437-3513-47BB-8CAC-26EF618CCF53}|ERP\\ERP.csproj|solutionrelative:erp\\areas\\basicinformation\\views\\employee\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F075C9-B529-4C09-A0C7-EF8AE3C49844}|ERP.Models\\ERP.Models.csproj|c:\\users\\user\\desktop\\erp\\erp.models\\basicinformation\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9F075C9-B529-4C09-A0C7-EF8AE3C49844}|ERP.Models\\ERP.Models.csproj|solutionrelative:erp.models\\basicinformation\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\BasicInformation\\Employee.cs",
+              "RelativeDocumentMoniker": "ERP.Models\\BasicInformation\\Employee.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP.Models\\BasicInformation\\Employee.cs",
+              "RelativeToolTip": "ERP.Models\\BasicInformation\\Employee.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAADwv0UAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T14:20:05.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\BasicInformation\\Views\\Employee\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "ERP\\Areas\\BasicInformation\\Views\\Employee\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\BasicInformation\\Views\\Employee\\Upsert.cshtml",
+              "RelativeToolTip": "ERP\\Areas\\BasicInformation\\Views\\Employee\\Upsert.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAIQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-17T14:10:35.141Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +58,9 @@
               "RelativeDocumentMoniker": "ERP\\Areas\\BasicInformation\\Controllers\\EmployeeController.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\ERP\\ERP\\Areas\\BasicInformation\\Controllers\\EmployeeController.cs",
               "RelativeToolTip": "ERP\\Areas\\BasicInformation\\Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwD8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T14:47:24.508Z",
+              "WhenOpened": "2024-10-17T13:18:15.886Z",
               "EditorCaption": ""
             }
           ]

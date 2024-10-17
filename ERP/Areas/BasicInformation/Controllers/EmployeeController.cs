@@ -53,24 +53,16 @@ namespace ERP.Areas.BasicInformation.Controllers
         [HttpPost]
         public async Task<IActionResult> Upsert(EmployeeVM employeeVM, IFormFile? file)
         {
-            Employee existingEmployee = await _unitOfWork.Employee.GetAsync(u => u.EmployeeId == employeeVM.Employee.EmployeeId);
-
-            if (existingEmployee != null)
-            {
-                // 如果沒有輸入密碼，保持密碼不便
-                if (string.IsNullOrEmpty(employeeVM.Employee.Password))
-                {
-                    employeeVM.Employee.Password = existingEmployee.Password;
-                    employeeVM.Employee.ConfirmPassword = existingEmployee.ConfirmPassword;
-                }
-                else
-                {
-                    employeeVM.Employee.Password = _passwordHasher.HashPassword(employeeVM.Employee, employeeVM.Employee.Password);
-                }
-            }
-
             if (ModelState.IsValid)
             {
+                if (employeeVM.Employee.Password != null)
+                {
+                    // 登入帳號密碼
+                    // 加密密碼
+                    var hashPassword = _passwordHasher.HashPassword(employeeVM.Employee, employeeVM.Employee.Password);
+                    employeeVM.Employee.Password = hashPassword;
+                }
+
                 // 新增圖片
                 // 取得 wwwroot 路徑
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
@@ -110,14 +102,11 @@ namespace ERP.Areas.BasicInformation.Controllers
 
                 if (employeeVM.Employee.EmployeeId == 0)
                 {
-                    employeeVM.Employee.Password = _passwordHasher.HashPassword(employeeVM.Employee, employeeVM.Employee.Password);
                     _unitOfWork.Employee.Add(employeeVM.Employee);
                     TempData["success"] = "新增成功";
                 }
                 else
                 {
-                    
-
                     _unitOfWork.Employee.Update(employeeVM.Employee);
                     TempData["success"] = "修改成功";
                 }
